@@ -1,12 +1,13 @@
-getgenv().Config = {
-        Dashboard = {
-            Enabled = false, -- Connect to Adopt Me dashboard To Control Script/View Stats (https://zekehub.com/dashboard/adoptme)
-            GroupName = "vps1", -- Group name for organizing accounts on dashboard
+   getgenv().Config = {
+      Dashboard = {
+            Enabled = true,       -- Send stats to dashboard
+            SyncConfig = false,    -- Accept config pushes from dashboard
+            GroupName = "vps1",   -- Group name for organising accounts on dashboard (https://zekehub.com/dashboard/adoptme)
         },
         BabyFarm = true, -- Does baby farm
         AutoCertificate = false, -- Auto use Pet Handler Pro Certificate when less than 30 days remaining
         PetFarm = {
-            Enabled = true, -- Enables the Pet Farm
+            Enabled = false, -- Enables the Pet Farm
             FarmEggs = false, -- If true, equips eggs to hatch them. If false, equips regular pets
             BuyEggs = false, -- If FarmEggs is true and no eggs in inventory, buy eggs automatically
             EggTypes = {}, -- Which eggs to equip ({} = any egg, or {"cracked_egg", "royal_egg"} for specific)
@@ -16,10 +17,6 @@ getgenv().Config = {
             PrioritizeFriendship = true, -- If true, selects pets with higher friendship level first
             SelectiveFarm = false, -- If true, only farm pets in SelecatedPetTypes list
             SelectedPetTypes = {}, -- Pet IDs to farm when SelectiveFarm is true (e.g., {"dog", "cat"})
-        },
-        EventFarm = {
-            CandyCliff = false, -- Automatically complete Candy Cliff event tasks and buys a chissle
-            MochiNail = false, -- Automatically complete Mochi Nail event and buys the tool needed
         },
         AutoTrade = {
             Enabled = false, -- Enable auto trading
@@ -72,7 +69,8 @@ getgenv().Config = {
         },
         AutoPay = {
             Enabled = false, -- Send bucks to another player
-            TargetPlayer = "", -- Username of player to pay bucks to
+            TargetPlayer = {}, -- Usernames of players to pay bucks to
+            Methods = {}, -- Payment methods to use: "register" (cash register), "mannequin" (buy outfits), "hotdog" (refreshment stands)
         },
         AutoOpen = {
             Enabled = false, -- Open gift boxes, baits, etc automatically
@@ -124,19 +122,20 @@ getgenv().Config = {
             },
         },
         Settings = {
-            AutoShowUI = false, -- Load the UI on script start (main overlay disable for less memory usage)
-            ShowOverlay = true, -- Show stats oReduce verlay (disables 3D rendering)
-            ReduceGraphics = true, -- Reduce graphics quality to minimum
-            FPSCap = 3, -- FPS cap option (0 = uncapped)
-            LureId = "ice_dimension_2025_ice_soup_bait" -- what lure to use for example: "ice_dimension_2025_ice_soup_bait"
+            AutoShowUI = true, -- Load the UI on script start (main overlay disable for less memory usage)
+            ShowOverlay = false, -- Show stats oReduce verlay (disables 3D rendering)
+            ReduceGraphics = false, -- Reduce graphics quality to minimum
+            FPSCap = 0, -- FPS cap option (0 = uncapped)
+            LureId = "ice_dimension_2025_ice_soup_bait", -- what lure to use for example: "ice_dimension_2025_ice_soup_bait"
+            TradeInvites = "Everyone", -- "Everyone" or "Friends"
         },
         Webhook = {
             Enabled = false, -- Send webhook notifications to Discord
             URL = "https://discord.com/api/", -- Discord webhook URL for notifications
             PetUnlock = {
-                Enabled = false, -- Send webhook when hatching/unlocking a pet
-                URL = "https://discord.com/api/webhooks/", -- Webhook URL for pet unlocks
-                FilterRarities = {"legendary", "ultra_rare"}, -- Only send for these rarities
+                Enabled = true, -- Send webhook when hatching/unlocking a pet
+                URL = "https://discord.com/api/", -- Webhook URL for pet unlocks
+                FilterRarities = {"legendary"}, -- Only send for these rarities
             },
         },
         TaskExclusion = {
