@@ -1,7 +1,7 @@
 getgenv().Config = {
         Dashboard = {
             Enabled = false, -- Connect to Adopt Me dashboard To Control Script/View Stats (https://zekehub.com/dashboard/adoptme)
-            GroupName = "", -- Group name for organizing accounts on dashboard
+            GroupName = "vps1", -- Group name for organizing accounts on dashboard
         },
         BabyFarm = true, -- Does baby farm
         AutoCertificate = false, -- Auto use Pet Handler Pro Certificate when less than 30 days remaining
