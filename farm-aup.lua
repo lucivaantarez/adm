@@ -2,19 +2,19 @@
       Dashboard = {
             Enabled = true,       -- Send stats to dashboard
             SyncConfig = false,    -- Accept config pushes from dashboard
-            GroupName = "vps1",   -- Group name for organising accounts on dashboard (https://zekehub.com/dashboard/adoptme)
+            GroupName = "",   -- Group name for organising accounts on dashboard (https://zekehub.com/dashboard/adoptme)
         },
         BabyFarm = true, -- Does baby farm
         AutoCertificate = false, -- Auto use Pet Handler Pro Certificate when less than 30 days remaining
         PetFarm = {
             Enabled = true, -- Enables the Pet Farm
-            FarmEggs = false, -- If true, equips eggs to hatch them. If false, equips regular pets
-            BuyEggs = false, -- If FarmEggs is true and no eggs in inventory, buy eggs automatically
-            EggTypes = {}, -- Which eggs to equip ({} = any egg, or {"cracked_egg", "royal_egg"} for specific)
-            BuyEggType = "any", -- Which egg to buy when BuyEggs is true ("any" or specific egg ID)
+            FarmEggs = true, -- If true, equips eggs to hatch them. If false, equips regular pets
+            BuyEggs = true, -- If FarmEggs is true and no eggs in inventory, buy eggs automatically
+            EggTypes = {"endangered_2026_endangered_egg"}, -- Which eggs to equip ({} = any egg, or {"cracked_egg", "royal_egg"} for specific)
+            BuyEggType = "endangered_2026_endangered_egg", -- Which egg to buy when BuyEggs is true ("any" or specific egg ID)
             MaxPets = 1, -- How many pets to equip at once (1 = free, 2 = requires Robux gamepass)
-            FarmUntilFullGrown = false, -- If true, selects pets that aren't full grown first
-            PrioritizeFriendship = true, -- If true, selects pets with higher friendship level first
+            FarmUntilFullGrown = true, -- If true, selects pets that aren't full grown first
+            PrioritizeFriendship = false, -- If true, selects pets with higher friendship level first
             SelectiveFarm = false, -- If true, only farm pets in SelecatedPetTypes list
             SelectedPetTypes = {}, -- Pet IDs to farm when SelectiveFarm is true (e.g., {"dog", "cat"})
         },
@@ -51,8 +51,8 @@
             -- },
         },
         AutoNeon = {
-            Enabled = false, -- Enable auto neon/mega fusion
-            MakeMega = false, -- Fuse neons into mega neons
+            Enabled = true, -- Enable auto neon/mega fusion
+            MakeMega = true, -- Fuse neons into mega neons
             NeonAll = true, -- Neon everything possible
             SelectedPets = {}, -- {} when NeonAll = true, otherwise {"dog", "cat"} etc
             MaxPerType = {}, -- {} = unlimited, {dog = 2, cat = 1} = limits per pet type
@@ -64,7 +64,7 @@
         },
         AutoBuy = {
             Enabled = false, -- Automatically buy items from shops
-            SelectedItems = {}, -- Item IDs to buy
+            SelectedItems = {"pet_recycler_2025_crystal_egg"}, -- Item IDs to buy
             BuyAmounts = {}, -- How many of each item to buy. Example: {5, 10} buys 5 cracked_eggs and 10 sandwiches. Empty {} buys infinite of each item. If there are more items than amounts, remaining items default to infinite.
         },
         AutoPay = {
@@ -77,21 +77,15 @@
             Items = {}, -- Item IDs to auto open
         },
         AutoRecycle = {
-            Enabled = false, -- Toggle auto recycling on/off
-            RarityFilter = {
-                -- Each rarity maps to a list of versions to recycle
-                -- Versions: "regular", "neon", "mega"
-                -- If a rarity is not listed or empty, pets of that rarity will NOT be recycled
-                -- If a rarity has versions listed, ONLY those versions will be recycled
-
-                -- common = {"regular", "neon", "mega"},  -- Recycle all common versions
-                -- uncommon = {"neon"},                    -- Only recycle neon uncommons
-                -- rare = {"regular", "neon", "mega"},     -- Recycle all rare versions
-                -- ultra_rare = {"regular", "neon", "mega"}, -- Recycle all ultra rare versions
-                -- legendary = {"mega"},                   -- Only recycle mega legendaries
+            Enabled = true, -- Toggle auto recycling on/off
+            RarityFilter = { 
+                  common = {"regular", "neon", "mega"}, 
+                  uncommon = {"regular", "neon", "mega"}, 
+                  rare = {"regular", "neon", "mega"}, 
+                  ultra_rare = {"neon", "mega"}
             },
             AgeFilter = {}, -- Empty = all ages, or specific ages e.g. {1, 2, 3, 4, 5, 6} (1=Newborn, 6=Full Grown)
-            ExcludedPets = {}, -- Pet IDs to never recycle e.g. {"dog", "cat", "shadow_dragon"}
+            ExcludedPets = {"dog", "cat"}, -- Pet IDs to never recycle e.g. {"dog", "cat", "shadow_dragon"}
         },
         IdleProgression = {
             Enabled = false, -- Put pets in pet pen for idle leveling
