@@ -63,7 +63,7 @@
             PotionVersionFilter = {}, -- Per-pet version filter e.g. {dog = {"neon"}, cat = {"regular", "neon"}} - empty = all versions
         },
         AutoBuy = {
-            Enabled = false, -- Automatically buy items from shops
+            Enabled = true, -- Automatically buy items from shops
             SelectedItems = {"pet_recycler_2025_crystal_egg"}, -- Item IDs to buy
             BuyAmounts = {}, -- How many of each item to buy. Example: {5, 10} buys 5 cracked_eggs and 10 sandwiches. Empty {} buys infinite of each item. If there are more items than amounts, remaining items default to infinite.
         },
