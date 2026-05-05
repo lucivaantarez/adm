@@ -1,20 +1,20 @@
    getgenv().Config = {
       Dashboard = {
             Enabled = true,       -- Send stats to dashboard
-            SyncConfig = true,    -- Accept config pushes from dashboard
-            GroupName = "A",   -- Group name for organising accounts on dashboard (https://zekehub.com/dashboard/adoptme)
+            SyncConfig = false,    -- Accept config pushes from dashboard
+            GroupName = "AUP",   -- Group name for organising accounts on dashboard (https://zekehub.com/dashboard/adoptme)
         },
         BabyFarm = true, -- Does baby farm
         AutoCertificate = false, -- Auto use Pet Handler Pro Certificate when less than 30 days remaining
         PetFarm = {
             Enabled = true, -- Enables the Pet Farm
-            FarmEggs = true, -- If true, equips eggs to hatch them. If false, equips regular pets
-            BuyEggs = true, -- If FarmEggs is true and no eggs in inventory, buy eggs automatically
-            EggTypes = {"endangered_2026_endangered_egg"}, -- Which eggs to equip ({} = any egg, or {"cracked_egg", "royal_egg"} for specific)
-            BuyEggType = "endangered_2026_endangered_egg", -- Which egg to buy when BuyEggs is true ("any" or specific egg ID)
+            FarmEggs = false, -- If true, equips eggs to hatch them. If false, equips regular pets
+            BuyEggs = false, -- If FarmEggs is true and no eggs in inventory, buy eggs automatically
+            EggTypes = {}, -- Which eggs to equip ({} = any egg, or {"cracked_egg", "royal_egg"} for specific)
+            BuyEggType = "any", -- Which egg to buy when BuyEggs is true ("any" or specific egg ID)
             MaxPets = 1, -- How many pets to equip at once (1 = free, 2 = requires Robux gamepass)
-            FarmUntilFullGrown = true, -- If true, selects pets that aren't full grown first
-            PrioritizeFriendship = false, -- If true, selects pets with higher friendship level first
+            FarmUntilFullGrown = false, -- If true, selects pets that aren't full grown first
+            PrioritizeFriendship = true, -- If true, selects pets with higher friendship level first
             SelectiveFarm = false, -- If true, only farm pets in SelecatedPetTypes list
             SelectedPetTypes = {}, -- Pet IDs to farm when SelectiveFarm is true (e.g., {"dog", "cat"})
         },
@@ -51,8 +51,8 @@
             -- },
         },
         AutoNeon = {
-            Enabled = true, -- Enable auto neon/mega fusion
-            MakeMega = true, -- Fuse neons into mega neons
+            Enabled = false, -- Enable auto neon/mega fusion
+            MakeMega = false, -- Fuse neons into mega neons
             NeonAll = true, -- Neon everything possible
             SelectedPets = {}, -- {} when NeonAll = true, otherwise {"dog", "cat"} etc
             MaxPerType = {}, -- {} = unlimited, {dog = 2, cat = 1} = limits per pet type
@@ -78,12 +78,7 @@
         },
         AutoRecycle = {
             Enabled = true, -- Toggle auto recycling on/off
-            RarityFilter = { 
-                  common = {"regular", "neon", "mega"}, 
-                  uncommon = {"regular", "neon", "mega"}, 
-                  rare = {"regular", "neon", "mega"}, 
-                  ultra_rare = {"neon", "mega"}
-            },
+            RarityFilter = { common = {"regular", "neon", "mega"}, uncommon = {"regular", "neon", "mega"}, rare = {"regular", "neon", "mega"}, ultra_rare = {"regular", "neon", "mega"} },
             AgeFilter = {}, -- Empty = all ages, or specific ages e.g. {1, 2, 3, 4, 5, 6} (1=Newborn, 6=Full Grown)
             ExcludedPets = {"dog", "cat"}, -- Pet IDs to never recycle e.g. {"dog", "cat", "shadow_dragon"}
         },
@@ -127,7 +122,7 @@
             Enabled = false, -- Send webhook notifications to Discord
             URL = "https://discord.com/api/", -- Discord webhook URL for notifications
             PetUnlock = {
-                Enabled = true, -- Send webhook when hatching/unlocking a pet
+                Enabled = false, -- Send webhook when hatching/unlocking a pet
                 URL = "https://discord.com/api/", -- Webhook URL for pet unlocks
                 FilterRarities = {"legendary"}, -- Only send for these rarities
             },
