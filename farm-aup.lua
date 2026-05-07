@@ -77,7 +77,7 @@
             Items = {}, -- Item IDs to auto open
         },
         AutoRecycle = {
-            Enabled = true, -- Toggle auto recycling on/off
+            Enabled = false, -- Toggle auto recycling on/off
             RarityFilter = { common = {"regular", "neon", "mega"}, uncommon = {"regular", "neon", "mega"}, rare = {"regular", "neon", "mega"}, ultra_rare = {"regular", "neon", "mega"} },
             AgeFilter = {}, -- Empty = all ages, or specific ages e.g. {1, 2, 3, 4, 5, 6} (1=Newborn, 6=Full Grown)
             ExcludedPets = {"dog", "cat"}, -- Pet IDs to never recycle e.g. {"dog", "cat", "shadow_dragon"}
