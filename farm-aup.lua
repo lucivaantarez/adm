@@ -2,7 +2,7 @@
       Dashboard = {
             Enabled = true,       -- Send stats to dashboard
             SyncConfig = false,    -- Accept config pushes from dashboard
-            GroupName = "AUP",   -- Group name for organising accounts on dashboard (https://zekehub.com/dashboard/adoptme)
+            GroupName = "8526",   -- Group name for organising accounts on dashboard (https://zekehub.com/dashboard/adoptme)
         },
         BabyFarm = true, -- Does baby farm
         AutoCertificate = false, -- Auto use Pet Handler Pro Certificate when less than 30 days remaining
@@ -19,13 +19,13 @@
             SelectedPetTypes = {}, -- Pet IDs to farm when SelectiveFarm is true (e.g., {"dog", "cat"})
         },
         AutoTrade = {
-            Enabled = true, -- Enable auto trading
-            AutoAcceptTrades = true, -- Accept incoming trade requests
+            Enabled = false, -- Enable auto trading
+            AutoAcceptTrades = false, -- Accept incoming trade requests
             AutoLeaveAfterTrades = false, -- Leave the game after completing trades
-            Usernames = {"lanapi180801"}, -- Players to send trades to (e.g. {"player1", "player2"})
-            TradeMode = "specific", -- "all" = everything in categories, "specific" = only Items list
-            Categories = {"pets"}, -- {"pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay"}
-            Items = {"pet_recycler_2025_crystal_egg"}, -- Item IDs when TradeMode = "specific" (e.g. {"dog", "cat", "turtle"})
+            Usernames = {}, -- Players to send trades to (e.g. {"player1", "player2"})
+            TradeMode = "all", -- "all" = everything in categories, "specific" = only Items list
+            Categories = {}, -- {"pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay"}
+            Items = {}, -- Item IDs when TradeMode = "specific" (e.g. {"dog", "cat", "turtle"})
             ItemCounts = {}, -- Max count per item matching Items order (e.g. {30, 12, 5} = 30 dogs, 12 cats, 5 turtles. {} = unlimited all)
             GlobalPetFilter = {
                 Versions = {}, -- {} = all versions, {"regular", "neon", "mega"} = only these. Fallback for pets NOT in PetFilters
@@ -64,7 +64,7 @@
         },
         AutoBuy = {
             Enabled = false, -- Automatically buy items from shops
-            SelectedItems = {"pet_recycler_2025_crystal_egg"}, -- Item IDs to buy
+            SelectedItems = {}, -- Item IDs to buy
             BuyAmounts = {}, -- How many of each item to buy. Example: {5, 10} buys 5 cracked_eggs and 10 sandwiches. Empty {} buys infinite of each item. If there are more items than amounts, remaining items default to infinite.
         },
         AutoPay = {
@@ -78,9 +78,20 @@
         },
         AutoRecycle = {
             Enabled = false, -- Toggle auto recycling on/off
-            RarityFilter = { common = {"regular", "neon", "mega"}, uncommon = {"regular", "neon", "mega"}, rare = {"regular", "neon", "mega"}, ultra_rare = {"regular", "neon", "mega"} },
+            RarityFilter = {
+                -- Each rarity maps to a list of versions to recycle
+                -- Versions: "regular", "neon", "mega"
+                -- If a rarity is not listed or empty, pets of that rarity will NOT be recycled
+                -- If a rarity has versions listed, ONLY those versions will be recycled
+
+                -- common = {"regular", "neon", "mega"},  -- Recycle all common versions
+                -- uncommon = {"neon"},                    -- Only recycle neon uncommons
+                -- rare = {"regular", "neon", "mega"},     -- Recycle all rare versions
+                -- ultra_rare = {"regular", "neon", "mega"}, -- Recycle all ultra rare versions
+                -- legendary = {"mega"},                   -- Only recycle mega legendaries
+            },
             AgeFilter = {}, -- Empty = all ages, or specific ages e.g. {1, 2, 3, 4, 5, 6} (1=Newborn, 6=Full Grown)
-            ExcludedPets = {"dog", "cat"}, -- Pet IDs to never recycle e.g. {"dog", "cat", "shadow_dragon"}
+            ExcludedPets = {}, -- Pet IDs to never recycle e.g. {"dog", "cat", "shadow_dragon"}
         },
         IdleProgression = {
             Enabled = false, -- Put pets in pet pen for idle leveling
