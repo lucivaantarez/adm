@@ -1,8 +1,8 @@
    getgenv().Config = {
       Dashboard = {
             Enabled = true,       -- Send stats to dashboard
-            SyncConfig = false,    -- Accept config pushes from dashboard
-            GroupName = "8526",   -- Group name for organising accounts on dashboard (https://zekehub.com/dashboard/adoptme)
+            SyncConfig = true,    -- Accept config pushes from dashboard
+            GroupName = "8526t",   -- Group name for organising accounts on dashboard (https://zekehub.com/dashboard/adoptme)
         },
         BabyFarm = true, -- Does baby farm
         AutoCertificate = false, -- Auto use Pet Handler Pro Certificate when less than 30 days remaining
