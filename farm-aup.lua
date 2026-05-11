@@ -1,16 +1,16 @@
    getgenv().Config = {
       Dashboard = {
             Enabled = true,       -- Send stats to dashboard
-            SyncConfig = false,    -- Accept config pushes from dashboard
-            GroupName = "8526",   -- Group name for organising accounts on dashboard (https://zekehub.com/dashboard/adoptme)
+            SyncConfig = true,    -- Accept config pushes from dashboard
+            GroupName = "aabhatch",   -- Group name for organising accounts on dashboard (https://zekehub.com/dashboard/adoptme)
         },
         BabyFarm = true, -- Does baby farm
         AutoCertificate = false, -- Auto use Pet Handler Pro Certificate when less than 30 days remaining
         PetFarm = {
             Enabled = true, -- Enables the Pet Farm
-            FarmEggs = false, -- If true, equips eggs to hatch them. If false, equips regular pets
+            FarmEggs = true, -- If true, equips eggs to hatch them. If false, equips regular pets
             BuyEggs = false, -- If FarmEggs is true and no eggs in inventory, buy eggs automatically
-            EggTypes = {}, -- Which eggs to equip ({} = any egg, or {"cracked_egg", "royal_egg"} for specific)
+            EggTypes = {"admin_abuse_egg_2026_egg"}, -- Which eggs to equip ({} = any egg, or {"cracked_egg", "royal_egg"} for specific)
             BuyEggType = "any", -- Which egg to buy when BuyEggs is true ("any" or specific egg ID)
             MaxPets = 1, -- How many pets to equip at once (1 = free, 2 = requires Robux gamepass)
             FarmUntilFullGrown = false, -- If true, selects pets that aren't full grown first
@@ -22,9 +22,9 @@
             Enabled = false, -- Enable auto trading
             AutoAcceptTrades = false, -- Accept incoming trade requests
             AutoLeaveAfterTrades = false, -- Leave the game after completing trades
-            Usernames = {}, -- Players to send trades to (e.g. {"player1", "player2"})
-            TradeMode = "all", -- "all" = everything in categories, "specific" = only Items list
-            Categories = {}, -- {"pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay"}
+            Usernames = {"lanapiastaga"}, -- Players to send trades to (e.g. {"player1", "player2"})
+            TradeMode = "specific", -- "all" = everything in categories, "specific" = only Items list
+            Categories = {"pets"}, -- {"pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay"}
             Items = {}, -- Item IDs when TradeMode = "specific" (e.g. {"dog", "cat", "turtle"})
             ItemCounts = {}, -- Max count per item matching Items order (e.g. {30, 12, 5} = 30 dogs, 12 cats, 5 turtles. {} = unlimited all)
             GlobalPetFilter = {
