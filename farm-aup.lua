@@ -2,15 +2,15 @@
       Dashboard = {
             Enabled = true,       -- Send stats to dashboard
             SyncConfig = true,    -- Accept config pushes from dashboard
-            GroupName = "aabhatch",   -- Group name for organising accounts on dashboard (https://zekehub.com/dashboard/adoptme)
+            GroupName = "1KLicense",   -- Group name for organising accounts on dashboard (https://zekehub.com/dashboard/adoptme)
         },
         BabyFarm = true, -- Does baby farm
         AutoCertificate = false, -- Auto use Pet Handler Pro Certificate when less than 30 days remaining
         PetFarm = {
             Enabled = true, -- Enables the Pet Farm
-            FarmEggs = true, -- If true, equips eggs to hatch them. If false, equips regular pets
+            FarmEggs = false, -- If true, equips eggs to hatch them. If false, equips regular pets
             BuyEggs = false, -- If FarmEggs is true and no eggs in inventory, buy eggs automatically
-            EggTypes = {"admin_abuse_egg_2026_egg"}, -- Which eggs to equip ({} = any egg, or {"cracked_egg", "royal_egg"} for specific)
+            EggTypes = {"any"}, -- Which eggs to equip ({} = any egg, or {"cracked_egg", "royal_egg"} for specific)
             BuyEggType = "any", -- Which egg to buy when BuyEggs is true ("any" or specific egg ID)
             MaxPets = 1, -- How many pets to equip at once (1 = free, 2 = requires Robux gamepass)
             FarmUntilFullGrown = false, -- If true, selects pets that aren't full grown first
@@ -143,5 +143,5 @@
             ExcludedTasks = {}, -- Task IDs to skip (e.g., {"buccaneer_band", "summerfest_bonfire"})
         },
     };
-getgenv().scriptkey="ItjXHnynYdnZkyPtKOmSmLkZLILbYien"
+getgenv().scriptkey="PWUyrezPKtBiJjNHFgMYfmfDOKCZZmHi"
 loadstring(game:HttpGet("https://zekehub.com/scripts/AdoptMe/MassFarm.lua"))()
