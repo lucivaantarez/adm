@@ -37,8 +37,7 @@
 
   h1 {
     font-family: 'Syne', sans-serif;
-    font-size: 21px;
-    font-weight: 800;
+    font-size: 21px; font-weight: 800;
     color: var(--accent);
     margin-bottom: 2px;
     letter-spacing: 0.3px;
@@ -46,10 +45,8 @@
   .sub { font-size: 10px; color: var(--muted); margin-bottom: 18px; }
   .sub b { color: var(--accent); }
 
-  /* TABS */
   .tabs {
-    display: flex;
-    gap: 6px;
+    display: flex; gap: 6px;
     margin-bottom: 16px;
     border-bottom: 1px solid var(--border);
     padding-bottom: 10px;
@@ -57,22 +54,18 @@
   }
   .tab {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    font-weight: 700;
+    font-size: 11px; font-weight: 700;
     padding: 7px 14px;
     border-radius: 8px;
     border: 1px solid var(--border);
-    background: transparent;
-    color: var(--muted);
-    cursor: pointer;
-    transition: all 0.15s;
+    background: transparent; color: var(--muted);
+    cursor: pointer; transition: all 0.15s;
   }
   .tab.active { background: var(--accent); color: #fff; border-color: var(--accent); }
 
   .panel { display: none; }
   .panel.active { display: block; }
 
-  /* CARD */
   .card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -81,15 +74,13 @@
     margin-bottom: 12px;
   }
   .card-title {
-    font-size: 10px;
-    font-weight: 700;
+    font-size: 10px; font-weight: 700;
     color: var(--muted);
     letter-spacing: 0.5px;
     text-transform: uppercase;
     margin-bottom: 10px;
   }
 
-  /* UPLOAD ZONE */
   .upload-zone {
     border: 2px dashed var(--border);
     border-radius: 10px;
@@ -110,7 +101,6 @@
   .upload-status.err { color: var(--red); }
   #fileInput, #fileInput2 { display: none; }
 
-  /* INFO BAR */
   .info-bar {
     display: flex; gap: 12px; flex-wrap: wrap;
     font-size: 10px; color: var(--muted);
@@ -119,7 +109,6 @@
   .info-bar .v { color: var(--text); font-weight: 700; }
   .info-bar .v.ok { color: var(--green); }
 
-  /* BATCH BUTTONS */
   .batch-wrap { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
   .bb {
     font-family: 'JetBrains Mono', monospace;
@@ -129,13 +118,11 @@
     border: 1px solid var(--border);
     background: var(--surface);
     color: var(--muted);
-    cursor: pointer;
-    transition: all 0.12s;
+    cursor: pointer; transition: all 0.12s;
   }
   .bb:hover { border-color: var(--accent); color: var(--accent); }
   .bb.on { background: var(--accent); color: #fff; border-color: var(--accent); }
 
-  /* RANGE ROW */
   .range-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
   .range-row label { font-size: 10px; color: var(--muted); }
   .range-row input[type=number] {
@@ -146,12 +133,10 @@
     color: var(--text);
     font-family: 'JetBrains Mono', monospace;
     font-size: 13px; font-weight: 700;
-    padding: 7px 9px;
-    outline: none;
+    padding: 7px 9px; outline: none;
   }
   .range-row input:focus { border-color: var(--accent); }
 
-  /* OUTPUT */
   .out-header {
     display: flex; justify-content: space-between; align-items: center;
     margin-bottom: 8px; flex-wrap: wrap; gap: 6px;
@@ -168,11 +153,8 @@
     color: var(--green);
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px; font-weight: 600;
-    padding: 11px;
-    line-height: 1.85;
-    resize: vertical;
-    min-height: 160px;
-    outline: none;
+    padding: 11px; line-height: 1.85;
+    resize: vertical; min-height: 160px; outline: none;
   }
   textarea.output::placeholder { color: var(--muted); font-weight: 400; font-style: italic; }
 
@@ -184,17 +166,13 @@
     color: var(--text);
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    padding: 10px;
-    line-height: 1.7;
-    resize: vertical;
-    min-height: 80px;
-    outline: none;
+    padding: 10px; line-height: 1.7;
+    resize: vertical; min-height: 80px; outline: none;
     margin-bottom: 8px;
   }
   textarea.input:focus { border-color: var(--accent); }
   textarea.input::placeholder { color: var(--muted); font-weight: 400; font-style: italic; }
 
-  /* BUTTONS */
   .btn-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
   .btn {
     font-family: 'JetBrains Mono', monospace;
@@ -209,6 +187,8 @@
   .btn.green:hover  { background: #2bc588; }
   .btn.ghost  { background: var(--border); color: var(--muted); }
   .btn.ghost:hover  { color: var(--text); }
+  .btn.danger { background: #3a1a22; color: var(--red); }
+  .btn.danger:hover { background: #4a2030; }
   .btn:active { transform: scale(0.96); }
 
   .step-badge {
@@ -237,17 +217,38 @@
     border: 1px solid var(--border);
     border-radius: 7px;
     color: var(--text);
-    padding: 6px 9px;
-    outline: none;
+    padding: 6px 9px; outline: none;
   }
 
-  /* LINK GENERATOR — numbered list */
-  ol#linkList { list-style: none; counter-reset: lk; margin-top: 4px; }
+  /* PRESET BAR — for save/load */
+  .preset-bar {
+    display: flex; gap: 6px; flex-wrap: wrap;
+    align-items: center;
+    margin-top: 8px;
+    padding: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+  }
+  .preset-bar select { flex: 1; min-width: 130px; }
+  .preset-bar .mini { padding: 6px 10px; font-size: 10px; }
+  .preset-name {
+    flex: 1; min-width: 120px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 6px 9px; outline: none;
+  }
+  .preset-name:focus { border-color: var(--accent); }
+
+  /* LINK GENERATOR */
+  #linkList { list-style: none; counter-reset: lk var(--start, 0); margin-top: 4px; }
   li.link-item {
     counter-increment: lk;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    display: flex; align-items: center; gap: 10px;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 10px;
@@ -255,37 +256,36 @@
     margin-bottom: 8px;
     transition: border-color 0.15s, background 0.15s, opacity 0.15s;
   }
+  #linkList.manual-num li.link-item::before { display: none; }
   li.link-item::before {
     content: counter(lk) ".";
     flex-shrink: 0;
     font-size: 11px; font-weight: 700;
     color: var(--muted);
-    min-width: 24px;
-    text-align: right;
+    min-width: 30px; text-align: right;
   }
   li.link-item:hover { border-color: var(--accent); }
-  li.link-item.dim { opacity: 0.26; }
-  li.link-item.active { border-color: var(--accent); background: #16162a; }
+  /* dim only applies in "focus mode" — NOT default behavior anymore */
+  #linkList.focus-mode li.link-item { opacity: 0.32; }
+  #linkList.focus-mode li.link-item.active { opacity: 1; border-color: var(--accent); background: #16162a; }
   li.link-item.visited { border-color: #1a3a2a; background: #0d1f18; }
   li.link-item.visited .link-text { color: var(--green); }
   li.link-item.visited::after {
-    content: "\2713 opened";
+    content: "\2713";
     flex-shrink: 0;
-    font-size: 9px; font-weight: 700;
+    font-size: 11px; font-weight: 700;
     color: var(--green);
-    letter-spacing: 0.4px;
   }
   .link-text {
     flex: 1;
     font-size: 12px; font-weight: 600;
     color: var(--accent);
     word-break: break-all;
-    line-height: 1.5;
-    outline: none;
-    user-select: all;
-    cursor: pointer;
+    line-height: 1.5; outline: none;
+    user-select: all; cursor: pointer;
   }
   .link-text:focus { color: #c4b0ff; }
+
   .row-btns { display: flex; gap: 6px; flex-shrink: 0; }
   .mini {
     font-family: 'JetBrains Mono', monospace;
@@ -304,8 +304,184 @@
   .mini.open { color: var(--green); text-decoration: none; }
   .mini.open:hover { border-color: var(--green); background: #0f2a20; }
   .mini:active { transform: scale(0.94); }
-  .hint { font-size: 10px; color: var(--muted); margin-top: 12px; line-height: 1.7; }
+
+  /* PAGINATION — chunk of 200 */
+  .pager {
+    display: flex; flex-wrap: wrap; gap: 5px;
+    margin-bottom: 12px;
+    padding: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    align-items: center;
+  }
+  .pager .label { font-size: 10px; color: var(--muted); margin-right: 4px; }
+  .pager-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.12s;
+  }
+  .pager-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .pager-btn.on { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+  /* Floating clear button shown only in focus mode */
+  .clear-focus {
+    position: sticky; bottom: 8px;
+    margin: 12px auto 0;
+    display: none;
+    background: var(--red);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(248,113,113,0.3);
+    z-index: 5;
+  }
+  #linkList.focus-mode ~ .clear-focus { display: block; }
+
+  .hint { font-size: 10px; color: var(--muted); margin-top: 10px; line-height: 1.7; }
   .hint b { color: var(--accent); }
+
+  .toast {
+    position: fixed; bottom: 16px; left: 50%;
+    transform: translateX(-50%) translateY(60px);
+    background: var(--card);
+    border: 1px solid var(--accent);
+    color: var(--text);
+    padding: 10px 18px;
+    border-radius: 24px;
+    font-size: 11px; font-weight: 700;
+    opacity: 0; transition: all 0.25s;
+    pointer-events: none;
+    z-index: 100;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+  .toast.ok { border-color: var(--green); }
+  .toast.err { border-color: var(--red); }
+
+  /* FILTER MODE TOGGLE */
+  .filter-toggle {
+    display: flex;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    padding: 3px;
+    gap: 3px;
+    margin-bottom: 10px;
+  }
+  .filter-toggle button {
+    flex: 1;
+    background: transparent;
+    color: var(--muted);
+    border: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px; font-weight: 700;
+    padding: 9px 6px;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all 0.15s;
+    line-height: 1.3;
+  }
+  .filter-toggle button.on { background: var(--accent); color: #fff; }
+  .filter-toggle .sub-label {
+    font-size: 8.5px; opacity: 0.75;
+    display: block; margin-top: 2px;
+    font-weight: 400;
+  }
+  .upload-zone.disabled { opacity: 0.32; pointer-events: none; }
+
+  /* IMPORT DIALOG */
+  .modal-overlay {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+  .modal-overlay.show { display: flex; }
+  .modal {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    width: 100%;
+    max-width: 480px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  .modal h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 15px;
+    color: var(--accent);
+    font-weight: 800;
+    margin-bottom: 4px;
+  }
+  .modal p { font-size: 11px; color: var(--muted); margin-bottom: 12px; line-height: 1.6; }
+  .modal textarea {
+    width: 100%; min-height: 100px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    padding: 9px;
+    outline: none;
+    resize: vertical;
+    margin-bottom: 10px;
+  }
+  .modal-divider {
+    text-align: center;
+    font-size: 10px; color: var(--muted);
+    margin: 12px 0;
+    position: relative;
+  }
+  .modal-divider::before, .modal-divider::after {
+    content: ''; position: absolute; top: 50%;
+    width: 38%; height: 1px; background: var(--border);
+  }
+  .modal-divider::before { left: 0; }
+  .modal-divider::after { right: 0; }
+  .modal-file-zone {
+    border: 2px dashed var(--border);
+    border-radius: 9px;
+    padding: 16px;
+    text-align: center;
+    cursor: pointer;
+    background: var(--surface);
+    transition: all 0.15s;
+    margin-bottom: 12px;
+  }
+  .modal-file-zone:hover { border-color: var(--accent); }
+  .modal-file-zone.over { border-color: var(--accent); background: #1a1630; }
+
+  /* RESPONSIVE */
+  @media (min-width: 768px) {
+    body { max-width: 1000px; padding: 24px 20px 60px; }
+    .preset-bar { flex-wrap: nowrap; }
+    .extractor-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .extractor-grid > .full { grid-column: 1 / -1; }
+  }
+  @media (max-width: 380px) {
+    h1 { font-size: 18px; }
+    .tab { padding: 6px 9px; font-size: 10px; }
+    .btn { padding: 8px 12px; font-size: 10px; }
+  }
 
   ::-webkit-scrollbar { width: 3px; }
   ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
@@ -314,58 +490,39 @@
 <body>
 
 <h1>🪐 Saturnity Tool</h1>
-<p class="sub">XLS Batcher · PS Extractor · Link Generator — <b>I love you to the moon and to Saturn</b></p>
+<p class="sub">PS Extractor · Link Generator — <b>I love you to the moon and to Saturn</b></p>
 
 <div class="tabs">
-  <button class="tab active" onclick="switchTab('batcher')">📋 USN Batcher</button>
-  <button class="tab" onclick="switchTab('extractor')">🔗 PS Extractor</button>
+  <button class="tab active" onclick="switchTab('extractor')">🔗 PS Extractor</button>
   <button class="tab" onclick="switchTab('links')">⚡ Link Gen</button>
 </div>
 
-<!-- TAB 1: USN BATCHER -->
-<div class="panel active" id="panel-batcher">
+<!-- TAB 1: PS EXTRACTOR -->
+<div class="panel active" id="panel-extractor">
+
+  <!-- Save/Load presets -->
   <div class="card">
-    <div class="card-title">Upload XLS</div>
-    <div class="upload-zone" id="uz1" onclick="document.getElementById('fileInput').click()">
-      <div class="upload-icon">📂</div>
-      <div class="upload-label">Tap to upload XLS</div>
-      <div class="upload-hint">SpreadsheetML .xls · first col = Username</div>
-      <div class="upload-status" id="us1"></div>
+    <div class="card-title">📦 Saved Presets <span class="step-badge" id="sb-presets">0 saved</span></div>
+    <p style="font-size:10px;color:var(--muted);margin-bottom:8px">Saves usernames + PS links to your phone. Pick what to load next time.</p>
+    <div class="preset-bar">
+      <select id="presetSel">
+        <option value="">— pick a preset —</option>
+      </select>
+      <button class="mini copy" onclick="askLoadPreset()">Load</button>
+      <button class="mini" style="color:var(--red);border-color:var(--red)" onclick="deletePreset()">Delete</button>
     </div>
-    <input type="file" id="fileInput" accept=".xls,.xlsx,.xml">
-    <div class="info-bar" id="ib1" style="display:none">
-      <div>unique: <span class="v ok" id="ib1-u">—</span></div>
-      <div>total rows: <span class="v" id="ib1-t">—</span></div>
-      <div>col: <span class="v" id="ib1-c">—</span></div>
-      <div>col override: <select id="colSel" onchange="onColChange()"></select></div>
+    <div class="preset-bar" style="margin-top:6px">
+      <input type="text" class="preset-name" id="presetName" placeholder="Name this batch (e.g. AM run 1–100)">
+      <button class="mini copy" onclick="savePreset()">💾 Save</button>
     </div>
-  </div>
-
-  <div class="card" id="rangeCard" style="display:none">
-    <div class="card-title">Batch Range</div>
-    <div class="batch-wrap" id="batchWrap"></div>
-    <div class="range-row">
-      <label>From #</label>
-      <input type="number" id="fromN" value="1" min="1" oninput="renderBatcher()">
-      <span style="color:var(--muted)">→</span>
-      <label>To #</label>
-      <input type="number" id="toN" value="100" min="1" oninput="renderBatcher()">
-      <button class="btn purple" style="padding:7px 11px;font-size:10px" onclick="renderBatcher()">Go</button>
+    <div class="preset-bar" style="margin-top:6px;gap:6px">
+      <button class="mini copy" onclick="exportPreset()" style="flex:1">📤 Export JSON</button>
+      <button class="mini copy" onclick="importPreset()" style="flex:1">📥 Import</button>
+      <button class="mini copy" onclick="sharePreset()" style="flex:1">🔗 Share Link</button>
     </div>
   </div>
 
-  <div class="card">
-    <div class="out-header">
-      <div class="out-title">Usernames</div>
-      <div class="out-count" id="b-count"></div>
-    </div>
-    <textarea class="output" id="b-out" placeholder="Upload XLS then pick a range…" readonly></textarea>
-    <p style="font-size:10px;color:var(--muted);margin-top:6px">👆 Tap inside → long-press → Select All → Copy</p>
-  </div>
-</div>
-
-<!-- TAB 2: PS EXTRACTOR -->
-<div class="panel" id="panel-extractor">
+  <div class="extractor-grid">
   <div class="card">
     <div class="card-title">Step 1 — Paste Usernames <span class="step-badge" id="sb1">0</span></div>
     <p style="font-size:10px;color:var(--muted);margin-bottom:8px">Paste all usernames from WinterHub, one per line. Order must match PS links below.</p>
@@ -385,12 +542,25 @@
       <button class="btn ghost" onclick="clearPS()">Clear</button>
     </div>
   </div>
+  </div>
 
   <div class="card">
-    <div class="card-title">Step 3 — XLS Filter <span class="step-badge ok" id="sb3">462 built-in</span></div>
+    <div class="card-title">Step 3 — Mode <span class="step-badge ok" id="sb3">filter on · 462 built-in</span></div>
+
+    <div class="filter-toggle">
+      <button id="ft-on" class="on" onclick="setFilterMode(true)">
+        🔍 Use Filter
+        <span class="sub-label">match against owner list</span>
+      </button>
+      <button id="ft-off" onclick="setFilterMode(false)">
+        📋 No Filter
+        <span class="sub-label">extract all PS links</span>
+      </button>
+    </div>
+
     <div class="upload-zone" id="uz2" onclick="document.getElementById('fileInput2').click()">
       <div class="upload-icon" style="font-size:20px">📂</div>
-      <div class="upload-label" style="font-size:11px">Upload new XLS to override filter</div>
+      <div class="upload-label" style="font-size:11px">Upload XLS to override filter</div>
       <div class="upload-hint">Or leave empty to use built-in 462 owners</div>
       <div class="upload-status" id="us2"></div>
     </div>
@@ -408,7 +578,10 @@
     </div>
     <textarea class="output" id="e-out" placeholder="PS links will appear here…" readonly></textarea>
     <div class="missing" id="e-missing"></div>
-    <p style="font-size:10px;color:var(--muted);margin-top:6px">👆 Tap inside → long-press → Select All → Copy</p>
+    <div class="btn-row">
+      <button class="btn purple" onclick="sendToLinkGen()">⚡ Send to Link Gen →</button>
+      <p style="font-size:10px;color:var(--muted);align-self:center">👆 or long-press inside to copy</p>
+    </div>
   </div>
 </div>
 
@@ -428,13 +601,53 @@
       <div class="out-title">Your Links</div>
       <div class="out-count" id="linkCount"></div>
     </div>
+    <div class="pager" id="pager" style="display:none"></div>
     <ol id="linkList"></ol>
-    <div class="hint">Tap a box (or <b>copy</b>) to copy that link. Focus a box and press <b>Ctrl+A</b> to select just that one. Tap <b>open</b> to launch it — opened links turn green.</div>
+    <button class="clear-focus" id="clearFocusBtn" onclick="clearFocus()">✕ exit focus mode</button>
+    <div class="hint">Tap a box (or <b>copy</b>) to copy. <b>Ctrl+A</b> on a focused box selects only that one. <b>Tap twice</b> on the same box to deselect. Opened links turn green.</div>
   </div>
 </div>
 
+<!-- IMPORT MODAL -->
+<div class="modal-overlay" id="importModal">
+  <div class="modal">
+    <h3>📥 Import Preset</h3>
+    <p>Paste the JSON from a friend, or upload a <b>.json</b> file.</p>
+    <div class="modal-file-zone" id="importFileZone" onclick="document.getElementById('importFileInput').click()">
+      <div style="font-size:22px;margin-bottom:4px">📁</div>
+      <div style="font-size:12px;font-weight:700;color:var(--text)">Upload .json file</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:2px">tap or drop a file here</div>
+    </div>
+    <input type="file" id="importFileInput" accept=".json,application/json" style="display:none">
+    <div class="modal-divider">or paste below</div>
+    <textarea id="importTextarea" placeholder='{"name": "...", "raw_usn": "...", ...}'></textarea>
+    <div class="btn-row" style="margin-top:4px">
+      <button class="btn purple" onclick="confirmImport()">Import</button>
+      <button class="btn ghost" onclick="closeImport()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- EXPORT MODAL -->
+<div class="modal-overlay" id="exportModal">
+  <div class="modal">
+    <h3>📤 Export Preset</h3>
+    <p>Pick how to export <b id="exportPresetName">...</b>:</p>
+    <div class="btn-row" style="flex-direction:column;gap:8px">
+      <button class="btn purple" style="width:100%" onclick="exportToClipboard()">📋 Copy JSON to clipboard</button>
+      <button class="btn green" style="width:100%" onclick="exportToFile()">💾 Save as .json file</button>
+      <button class="btn ghost" style="width:100%" onclick="closeExport()">Cancel</button>
+    </div>
+    <p style="margin-top:12px;font-size:10px">Tip: for 1000+ entries, "Save as file" is more reliable than clipboard.</p>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
 <script>
-// SHARED: XML PARSER
+// ════════════════════════════════════════════════════════════════════
+//  SHARED HELPERS
+// ════════════════════════════════════════════════════════════════════
 function parseXMLSheet(text) {
   const doc = new DOMParser().parseFromString(text, 'text/xml');
   const rows = doc.querySelectorAll('Row');
@@ -449,9 +662,22 @@ function parseXMLSheet(text) {
   return out;
 }
 
-// TAB SWITCHER
+function setUS(id, msg, cls) {
+  const el = document.getElementById(id);
+  el.textContent = msg;
+  el.className = 'upload-status' + (cls ? ' '+cls : '');
+}
+
+function toast(msg, type) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show' + (type ? ' '+type : '');
+  clearTimeout(t._t);
+  t._t = setTimeout(() => { t.className = 'toast' + (type ? ' '+type : ''); }, 1800);
+}
+
 function switchTab(name) {
-  const panels = ['batcher','extractor','links'];
+  const panels = ['extractor','links'];
   document.querySelectorAll('.tab').forEach((t,i) => {
     t.classList.toggle('active', panels[i] === name);
   });
@@ -460,133 +686,23 @@ function switchTab(name) {
   });
 }
 
-// TAB 1: BATCHER
-let bRows    = [];
-let bAllRows = [];
-let bHeaders = [];
-let bCol     = 0;
 
-document.getElementById('fileInput').addEventListener('change', e => {
-  if (e.target.files[0]) loadBatcherFile(e.target.files[0]);
-});
-
-const uz1 = document.getElementById('uz1');
-uz1.addEventListener('dragover', e => { e.preventDefault(); uz1.style.borderColor='var(--accent)'; });
-uz1.addEventListener('dragleave', () => uz1.style.borderColor='');
-uz1.addEventListener('drop', e => {
-  e.preventDefault();
-  uz1.style.borderColor = '';
-  if (e.dataTransfer.files[0]) loadBatcherFile(e.dataTransfer.files[0]);
-});
-
-async function loadBatcherFile(file) {
-  setUS('us1', 'Reading…', '');
-  uz1.className = 'upload-zone';
-  try {
-    const text = await file.text();
-    const parsed = parseXMLSheet(text);
-    if (parsed.length < 2) throw new Error('No data rows');
-    bHeaders = parsed[0];
-    bAllRows = parsed.slice(1).filter(r => r.some(c => c.trim()));
-    const sel = document.getElementById('colSel');
-    sel.innerHTML = '';
-    bHeaders.forEach((h, i) => {
-      const o = document.createElement('option');
-      o.value = i;
-      o.textContent = (h || 'Col'+(i+1));
-      sel.appendChild(o);
-    });
-    sel.value = 0;
-    bCol = 0;
-    buildUniqueRows();
-    uz1.classList.add('loaded');
-    setUS('us1', `✓ Loaded "${file.name}"`, 'ok');
-    document.getElementById('ib1').style.display = 'flex';
-    document.getElementById('rangeCard').style.display = 'block';
-    buildBatchBtns();
-    renderBatcher();
-  } catch(err) {
-    uz1.classList.add('err');
-    setUS('us1', '✗ ' + err.message, 'err');
-  }
-}
-
-function buildUniqueRows() {
-  const seen = new Set();
-  bRows = [];
-  for (const row of bAllRows) {
-    const val = (row[bCol] || '').trim();
-    if (val && val.toLowerCase() !== (bHeaders[bCol]||'').toLowerCase() && !seen.has(val)) {
-      seen.add(val);
-      bRows.push(val);
-    }
-  }
-  document.getElementById('ib1-u').textContent = bRows.length;
-  document.getElementById('ib1-t').textContent = bAllRows.length;
-  document.getElementById('ib1-c').textContent = bHeaders[bCol] || 'Col'+(bCol+1);
-  document.getElementById('fromN').value = 1;
-  document.getElementById('toN').value   = bRows.length;
-  document.getElementById('toN').max     = bRows.length;
-  document.getElementById('fromN').max   = bRows.length;
-}
-
-function onColChange() {
-  bCol = parseInt(document.getElementById('colSel').value);
-  buildUniqueRows();
-  buildBatchBtns();
-  renderBatcher();
-}
-
-function buildBatchBtns() {
-  const total = bRows.length;
-  const wrap  = document.getElementById('batchWrap');
-  wrap.innerHTML = '';
-  const size = total <= 200 ? 50 : total <= 600 ? 100 : 200;
-  for (let s = 1; s <= total; s += size) {
-    const e = Math.min(s + size - 1, total);
-    mkBB(wrap, s, e, `${s}–${e}`);
-  }
-  mkBB(wrap, 1, total, `All (${total})`);
-}
-
-function mkBB(wrap, from, to, label) {
-  const b = document.createElement('button');
-  b.className = 'bb';
-  b.textContent = label;
-  b.onclick = () => {
-    wrap.querySelectorAll('.bb').forEach(x => x.classList.remove('on'));
-    b.classList.add('on');
-    document.getElementById('fromN').value = from;
-    document.getElementById('toN').value   = to;
-    renderBatcher();
-  };
-  wrap.appendChild(b);
-}
-
-function renderBatcher() {
-  if (!bRows.length) return;
-  const from = Math.max(1, parseInt(document.getElementById('fromN').value) || 1);
-  const to   = Math.min(bRows.length, parseInt(document.getElementById('toN').value) || bRows.length);
-  const slice = bRows.slice(from - 1, to);
-  document.getElementById('b-out').value = slice.join('\n');
-  document.getElementById('b-count').innerHTML =
-    `<b>${slice.length}</b> usernames · rows ${from}–${to} of ${bRows.length}`;
-}
-
-// TAB 2: PS EXTRACTOR
+// ════════════════════════════════════════════════════════════════════
+//  TAB 2: PS EXTRACTOR
+// ════════════════════════════════════════════════════════════════════
 const BUILTIN = new Set(["Hazel51PixelVibesPro","Ja5xRR3mypro","OnlyNovaReiign","JustLucas2WinQuestXO","Axel8justnorabriartV","HazelNNash20Dragon","Carter93RubyBrooks","R4pidTiger21","IvyBrooks19","HudsoonEverly","WhaleHous999e","SlothMiloPuppy777","Ella999Sky3Falcon17","L1lNov4SkatesRBX","SkyeWalker27Crew564","EzraSpeed103RBX","XzRift9dTig3rHzX1456","SkylarShark2k","GigaEagleboy87","MightyDrawsgaming","M1niMightyDuckKidSto","KaydenKnox24","TAZryder3","KaiPackPlayz20","juztG365uppyGangRBX","ivyatlas182247","tazStReamS0","DashSpeedshiny","Sawyer2kGoldenFalcon","Dr3amyFox0","Layla4EmberCodes","MrGrayson3D3ditsRBLX","CloudyL3op4rdgiga","SunnyReign1427777","YoStormAtlas190917","EllaW630est2313","electrRubyCraftsZone","LogaNr1V3R26","FrosttDuck","Harper10NixEverlly","fuzfinnpuffinvibes18","JaxElla24Brookz","TheLayla4EverTiger08","EzraKno999xproEpic","Nova139SunnyGangg","C384arterSkye","EmmaStreamsworlds","CarterRi365ver","babyLuluQuinn16Tycoo","NoraParker1","AceKittenplayzfox3","JOLLYtiger491rblx","SkylarBoss19","re4lTinyLeopard25","OwenMaddoxDevworlds","ElEcTrIcPl4Yz","emBeRBuNNy198","OliviaEmber2014","XzV3natorH6Pix3lu6Bl","FoxSquad720","notAuroraAce14Offici","Nora79NeonWorldsHQ","Kinsley1SKYARMY","RomanNash07rbx19","SawyerSkye27","RileyCruz1808","LilCalebMaddox113","rapidIvy1Gang","RoguedQCrazeZQCore17","AvaKnox9","NOVADRAWSBLox12","Cooki3a1ProA1339","Jackson38SADiecobrav","OliviaCreatees9","HudsonCodesvibees","Leo60FluffyPuffinGir","RubyWren48","LadyFreshKnox999","xXMoch14LifeEagle288","ShadowMaxZayneVibes","Xz_Ech0BladeFfMystic","XzBlast4TIonMzX13295","AriSpeed2k","UltraSkylar4EverLane","BaconKNRogueX383","DuckRealKa1Lane08","FinnonlyMason2kZayne","WildOtter51","Snip3rcHC3l3stialLHA","WolfOEFrostbite41137","SkyPhoeenix22999","owenbrookS65","Galaxy0RTitanX141193","SirKa831ydenZayne14","AquagCMaxu146284YT","RockyHunter24vibesSl","NotG3ckoHouseGirl27","Skye777Maddox22","Jackson4LifeEverly36","GamerChRocketRhZap11","notshadowbuiLderTV","ByteCcClawpcClaw1554","Xz_Ion6fFlashLfViral","re20XCruZViBEZ","Pixelz3Oblivion51588","ByteStormkPShifter41","XzGhostCARavenbzX163","GraysonWest16","EmBeRdReW972","Asher16bLiTzEvVeRlY","Slim39bSnip3rP1051","Hazel777RoccketWhale","SniperlhLight2163527","xXGrayso14nOtt3rrbx","IsabellaFoxBlox9","CodeyCVantalCJelly11","Riley4LifeRyder9","S4wyerBrooks11","L4dyRileyRemyGaming","Ava365WillowEmber","HyperW725hale","AxelBriar212364boss","T3chnoMxStormyu1615","Pixel72zSkye","NightSDTurbo7196594","XzBlizzard4aPlayzDzX","AidenEmb832erHQ11","glitterDrAGon196","XzShadowsJRidersJBli","sunny777bossrBx11","FinnRavenPal","Only433GraysonShark","rileyNovaRBBBXClubrb","yOjAxOn24PlAyZ","novaViBEsZONe","Sparkv1Orbity1Queen1","HazzelNash4Life20","TheEthanKnox18","EchoXZ1QuantumO14572","LucasTatumGuppy856","FreshGeckoPal","TwilightyZRavenP1328","VoidBQVortexcQFlick1","ChloeWest4","YoKa1Playshqcrafts","LilFrostZayneOfficia","Kayden292ZaneBuilder","LadyChloeNash","EpicOjAlpha9jVenom10","MrMason2CoolVibesbra","ZanneKitt20y","C4ptainChloeGaamingZ","Ava28SwiftBunnyCr3w","XzWolfO8Storm18Build","ARcadEcocO2wINWEST","Claw7hTurboA1816","Owen238Rock3tJademon","CyberTHStar6109315","Acen2BladeL1332","theMasonNatioon27","ZOeqQUinn","Lun6aReign09XO27","Log4nWre5n","wiLunaWest14Official","EmberZone26","XzIonz0Stormyd0Novaz","SirGlitt3rPenguinPal","KaiJaxon1299","SadieJade138","SkylarMegaSquadrblxm","Roman9HHudson2CoolDi","XzTwilightLBWraithgz","harperjaxon17studio","RubyReign_9","XzFrost7lStrikergzX1","Rocket5aHypery192276","ultraDeclanStudio26","CrypttVGalaxy2VIon10","PowerUsSparkg1670","XzBoltM1Hunt3rM1Blad","Build3rNWTurb0928","KAIBRIARPRO","LuluBr1ar","tazNotRuby999Briar20","OnlyLaylaSkye","TinyGlitterEagleTV","JellyoIToxicg1094","skynash0","XzWraithxEAshenFzX18","RealGlitterLeopardKi","UltraStormDuck0","XzSilver0zIceEzX","XzSilverUQLavaJQFire","LaylaClipzpro13","D3lta35Rock3tU1602","Ne0nwjLucky7","XzB3arx9WarprzX14576","UltrazhhhadowBunny","TazGuppy36010Stud1o","FoxeTBladeq83","CocoPlaysB14loxpixel","Crims0nCSMirag391992","ShadowTeam_6","ZapFDArrowl110352","Off1cialzpeedyFrog","ViperV7Sparkj143327","XzSilverSZZaphzX1491","HerooWFrostbite0WFal","Skater6SBladeB1656","Nova365GoosePlayz","Riley24caleb777playS","Craftz3V3natorP1158","XzThornW4WraithTzX11","Ember2CoolTycoonVibe","XzStarJ4Lion34EchozX","AceuiFrostbiteK14634","RockyEdits51","Fusioni2Pixelj77","XzWraithQzRumbletzRa","BabyDinoFamm","XzAlphaVITurboeIHero","onlyAce4LifeCrewPlay","XzStormqxHyperMzX199","DashRRBXGang24728","XzDawnc4CrystalZzX36","declaneverly0918","Xz_Cyb3rLUV3natorFUS","arriaWReN2025","TwilightXUBeastW1501","Bubbles2CoolCrew","Laylaztud1o","TigerGDBuilder1","GlitchqnPixelInThorn","AvaGang53","HollowzNIce4112491","Ma13xNashFuzzy","FinnRyyder0702","XzStarryzTSurg3XzX37","Byt3f6Byt3K189630","XzEchoYXTurbojzX1553","bloxLucasMaddox","CaptainMiaHunter17Gi","CrimsonKitty29","AidenBlocks04","Xz_ULTRABSBLAZEOSSTA","SirRileyStudioRBX","Ari365999Remyhq29","XzMasterodWolf5zX17","BabyCarterKnoxTV1128","Xz_HyperXRMinerNRLig","DawnDRIcej101256","Scyth3ovFlam30vAsh3n","Chill6ZPowerDZOblivi","XzCryptqaI0n6aQueenz","LaadyChlo3West15","CryptHNNovaCoreD1561","Xz_Fr0stbit3VZRid3rl","jaxremy3","PrismsdFlame4","StormJaxon2022","Asher235BlitzMoose","XzFrostbiteBKMasterO","HollowAnSnareR186966","Sunny3verly21","CriimsonSha19rkPuppy","ChillWorldsKid","XzZapIdNightHdByteSt","ProuvBolta1074","LadyGigaOtter7","N3on1kFall3nk85","MrsOliviaMaddox2318","Xz_B3astOdMirag31dPl","Fusi0nweSt0rm11818","XzTurboihCoreghSwitc","Infernox1CircuitI128","Noah6AceRBX","LaylaPlay16s","GlideYjToxicn1078","FrostRBXRBX","Starry2ZSt3althH1846","GlitchB6AquaR6Gam3r1","SirJacksonSkates_3","XzV3nator9CGigaKzX17","RubyCrewOf08fici4l18","RileyBlox246","XzTechnoNMGoldenXzX1","ByteStormjnSwitch111","TurboDCGlitchl1526","Qu33n7FCrimsonz1229","XzCookieIVEchojzX154","AcecTMagicq1807","Gold3nW0Chill1138741","XzSkyvcTwilightOcLig","StarryopMaxj178147","RunerDThunderD117327","GamerItStriker017802","XzBlizzardDlToxicCzX","AshenrQFlickDQSonic6","Build3r90PrismG0Nigh","XzTwilightAtStreamDz","LegendBcMinerG162661","XzBuild3rPINovaCor30","KingQLBoltb1614","RiftWGSparkx129172","XZ_InfernocbPixelEbT","XZ_Blockd3Byteg3Twil","Flame2hGlideT","NinjalmPixelatedy138","RockettcAcec120923","XZ_Th0rnjaFr0stbiter","DawnOYWraithu147280","StarOsZeroH","Rav3nNSShad3C14","XzLionLcMagicocBlock","ToxicVtWolfY1726","XzMirageeTIceiTSteal","DustCxSlimec138298","Xz_Tig3rMzTwilightvz","AquaiQStarry0QPlayz1","PandarEPh0enixrEFr0s","Cooki3m2Qu33nD31","SoniczRB3astD85","ViralWbSkybbAqua1711","MiragedZQuantumu1393","FusionYLVortexq14757","Th0rn3cSilverW179255","XzHyp3rzWDriftFWPuls","BlitzfqCrazeQ186841","Ic313Zoomm","Cod3JDSparkly399","Xz_LUCKYMWECHOXMWBLA","N3bulaamCrimson4mWol","FlashDZMysticA1546","Xz_SLIMEJCZAPYCOBLIV","HunterOZC0dea78","RogueXVmPanda1mEcho1","ZoomOhFlashs196115","JellyJAOmegas50","OrbitJZTechnoV145357","Build3rOMAquaI143129","Echoj4WolfC1793","Xz_Block35PandaR5Swi","NovaaqBane6qCrystal1","EchoXAOLavawOBane159","XzPowerFhCelestialXh","RiftcKJellys168575","Pixell8OrbitE","DustsuBytea85","WardentTDarkb172229","EpiczQJellyi63","Xz_Shift3r1ACircuita","Eagl3yCSurg351971","N3onXQQuantum6QRift1","XzMaxUrBlitzTzX18581","XzTwilightA0Spark00R","XzBlizzardXBArrow1BW","FireJUKingi1855","UltraGvPho3nixE","StormufFirex1430","StormyzuVortexZuMax1","Starg9EchoBladem","OrbitsEShifterY44","Frostbite1MQuantumZ5","SkytaFlam3b141449","LionkpVoidd1018","XzOblivionSILuckyizX","Xz_ORBITRIBYT3STORMC","Scyth3z5Byt3A1882","RiftutZapMtCraft1045","CrimsondbEcho81897","UltrasQEagleO109245","XzAceJtSniperrzX1159","Fir38CChillz168462","KingIBStormChasern19","XzNinjaiMBuild3r1zX1","XzVip3r5uStarszX1113","Xz_MysticDyPlayzOyCr","Xz_G0ldenuOArr0wvOSk","XzByteddFoxQzX1069","TurboQfMechac1196","NebulaDrAshenkrCeles","Xz_Strik3rNnChas3AnS","XzOrbit7QNovaczX","CraftWjDancerejChill","LuckyVkPror102923","StarrySYMechaa116263","StarrySDDriftq37","Arrow9oPhoenixvoOrbi","XzPrimal9mPrismSmDri","XzWolfchDuck0zX1426","ChillIUCoreZ37","BlazeAdSaberZdVenato","MinerCTTwilighth1746","VenomAXRiftQ1869","Cha0syqEch0k1647","BaconCXCrystalN","STORMCHASER5MLAVA887","AshenMAEpicf150136","UltraQDFuryLDFox32","Ech0V5R0cketN1406","XzC3l3stialxWSilv3r8","XzBlizzardcWThundern","BeastctStarryJ1638YT","Blitz9hUltran164629","XZ_R0gueXKHCelestial","HeroDQFlameNQIon37","Dawn3VWraithb115676","Xz_Bac0n0NFr0stbit3a","TechnoAfUltra5fStorm","Xz_MoonJDFall3nHDMin","LegendM1VenomJ29","SparklykUSynthQ1415","VantabgClawI1532","XzLavaJzH3r07zX1358","XzBlizzardhlRid3r1zX","Xz_NightfallxPUltraS","Viper7eBaneE142843","XzPlayzfoSwitchuzX37","RogueOLPixelatedx135","Xz_C00kieGTPixelYTNi","XzBoltBBWraith9zX134","SkaterVSStreamESNebu","HunterWYMagicE139038","Bl0ck6aSlimeu192265","XzLuckygnVenomczX193","XzKnight0JPrismTzX10","Z00mmvWraithpvC0re19","SkaterNWEchoa112645","GamerHcMechaP127719","Xz_Skat3rA4Run3l4Ban","PhoenixBGQuantumPGWa","SparklyQSRumble71510","EchofsFall3n3168978","CorerhFallenI","Danc3rwWMirag3H10949","ShaderiRidere117659","FuryzXRav3nqXAc394","XzSnareSsRunevzX1784","PandaiEWardenU138447","DustxcRogueXz162586","TwilightM9VenatorL9F","Xz_DawnDHHyper5HWolf","GigaQMFrostJ166813","XzZoomPFTwilightoFAs","EchokYFall3nX143738","XzFrost3mHazeqzX","RumbletBLavaC58","VortexUAWardenJ1684","Xz_Epic2gMasterDgVor","StormChas3rRHBlitzQ","RiftlUPrimaln176232","Xz_LightYqStreamnqCi","XzChillBgLionwzX1162","Xz_MysticEZGlidetZPu","SniperFxMasterA","PixelkWFirejWHyper13","MechaoYEchoXf1882","PlayzDpRiftG1405","XzThund3rMzRiftQzX74","Playz0tJellyC177142","Xz_Fall3nOKTig3r9KIc","Xz_Void3qToxicXqBuil"]);
 
 let xlsFilter = BUILTIN;
 let usnArr = [];
 let psArr  = [];
+let lastExtracted = []; // remember last matched PS links for save / send-to-linkgen
 
 document.getElementById('fileInput2').addEventListener('change', e => {
   if (e.target.files[0]) loadFilterFile(e.target.files[0]);
 });
-document.getElementById('uz2').onclick = () => document.getElementById('fileInput2').click();
 
 async function loadFilterFile(file) {
-  setUS('us2', 'Reading…', '');
+  setUS('us2', 'Reading\u2026', '');
   try {
     const text = await file.text();
     const parsed = parseXMLSheet(text);
@@ -598,23 +714,22 @@ async function loadFilterFile(file) {
       if (v && v.toLowerCase() !== header) seen.add(v);
     }
     xlsFilter = seen;
-    document.getElementById('sb3').textContent = seen.size + ' from XLS';
-    document.getElementById('sb3').className = 'step-badge ok';
     document.getElementById('uz2').classList.add('loaded');
-    setUS('us2', `✓ ${seen.size} unique usernames loaded`, 'ok');
+    setUS('us2', `\u2713 ${seen.size} unique usernames loaded`, 'ok');
+    setFilterMode(filterModeOn); // refresh badge
   } catch(err) {
     document.getElementById('uz2').classList.add('err');
-    setUS('us2', '✗ ' + err.message, 'err');
+    setUS('us2', '\u2717 ' + err.message, 'err');
   }
 }
 
 function resetFilter() {
   xlsFilter = BUILTIN;
-  document.getElementById('sb3').textContent = '462 built-in';
-  document.getElementById('sb3').className = 'step-badge ok';
   document.getElementById('uz2').className = 'upload-zone';
+  if (!filterModeOn) document.getElementById('uz2').classList.add('disabled');
   setUS('us2', '', '');
   document.getElementById('fileInput2').value = '';
+  setFilterMode(filterModeOn); // refresh badge
 }
 
 function parseLines(raw) {
@@ -626,6 +741,7 @@ function loadUsn() {
   const b = document.getElementById('sb1');
   b.textContent = usnArr.length || '0';
   b.className = 'step-badge ' + (usnArr.length ? 'ok' : 'err');
+  if (usnArr.length) toast(`\u2713 ${usnArr.length} usernames loaded`, 'ok');
 }
 function clearUsn() {
   document.getElementById('usn-in').value = '';
@@ -639,6 +755,7 @@ function loadPS() {
   const b = document.getElementById('sb2');
   b.textContent = psArr.length || '0';
   b.className = 'step-badge ' + (psArr.length ? 'ok' : 'err');
+  if (psArr.length) toast(`\u2713 ${psArr.length} PS links loaded`, 'ok');
 }
 function clearPS() {
   document.getElementById('ps-in').value = '';
@@ -647,57 +764,442 @@ function clearPS() {
   document.getElementById('sb2').className = 'step-badge';
 }
 
-function runExtract() {
-  if (!usnArr.length) loadUsn();
-  if (!psArr.length)  loadPS();
-  if (!usnArr.length) { alert('Paste usernames first (Step 1)'); return; }
-  if (!psArr.length)  { alert('Paste PS links first (Step 2)'); return; }
+// ── Filter mode (saved in localStorage) ──
+const FILTER_MODE_KEY = 'saturnity_filter_mode';
+let filterModeOn = localStorage.getItem(FILTER_MODE_KEY) !== 'off';
 
-  const len     = Math.min(usnArr.length, psArr.length);
-  const matched = [];
-  for (let i = 0; i < len; i++) {
-    if (xlsFilter.has(usnArr[i])) matched.push(psArr[i]);
-  }
-  document.getElementById('e-out').value = matched.join('\n');
-  document.getElementById('e-count').innerHTML =
-    `<b>${matched.length}</b> PS links · from ${len} pairs`;
-
-  const pastedSet = new Set(usnArr);
-  const missing = [...xlsFilter].filter(n => !pastedSet.has(n));
-  document.getElementById('e-missing').textContent =
-    missing.length ? `⚠ ${missing.length} XLS accounts not in your paste: ${missing.slice(0,20).join(', ')}${missing.length>20?'…':''}` : '';
-
-  if (usnArr.length !== psArr.length) {
-    document.getElementById('e-missing').textContent +=
-      `\n⚠ Count mismatch: ${usnArr.length} usernames vs ${psArr.length} PS links`;
+function setFilterMode(on) {
+  filterModeOn = on;
+  localStorage.setItem(FILTER_MODE_KEY, on ? 'on' : 'off');
+  document.getElementById('ft-on').classList.toggle('on', on);
+  document.getElementById('ft-off').classList.toggle('on', !on);
+  document.getElementById('uz2').classList.toggle('disabled', !on);
+  const badge = document.getElementById('sb3');
+  if (on) {
+    const count = xlsFilter === BUILTIN ? '462 built-in' : (xlsFilter.size + ' from XLS');
+    badge.textContent = 'filter on \u00b7 ' + count;
+    badge.className = 'step-badge ok';
+  } else {
+    badge.textContent = 'no filter \u00b7 pass-through';
+    badge.className = 'step-badge';
   }
 }
 
-// TAB 3: LINK GENERATOR
+function runExtract() {
+  if (!usnArr.length) loadUsn();
+  if (!psArr.length)  loadPS();
+  if (!psArr.length)  { toast('Paste PS links first (Step 2)', 'err'); return; }
+
+  const len = Math.min(Math.max(usnArr.length, 0) || psArr.length, psArr.length);
+  let matched;
+
+  if (filterModeOn) {
+    if (!usnArr.length) { toast('Filter ON needs usernames (Step 1)', 'err'); return; }
+    matched = [];
+    for (let i = 0; i < len; i++) {
+      if (xlsFilter.has(usnArr[i])) matched.push(psArr[i]);
+    }
+  } else {
+    // pass-through: all PS links, no filtering
+    matched = psArr.slice();
+  }
+
+  lastExtracted = matched;
+  document.getElementById('e-out').value = matched.join('\n');
+  document.getElementById('e-count').innerHTML = filterModeOn
+    ? `<b>${matched.length}</b> matched \u00b7 from ${len} pairs`
+    : `<b>${matched.length}</b> extracted \u00b7 no filter`;
+
+  let warn = '';
+  if (filterModeOn) {
+    const pastedSet = new Set(usnArr);
+    const missing = [...xlsFilter].filter(n => !pastedSet.has(n));
+    if (missing.length) warn += `\u26a0 ${missing.length} XLS accounts not in your paste: ${missing.slice(0,20).join(', ')}${missing.length>20?'\u2026':''}`;
+  }
+  if (usnArr.length && psArr.length && usnArr.length !== psArr.length) {
+    warn += (warn?'\n':'') + `\u26a0 Count mismatch: ${usnArr.length} usernames vs ${psArr.length} PS links`;
+  }
+  document.getElementById('e-missing').textContent = warn;
+  toast(`\u2713 ${filterModeOn?'Matched':'Extracted'} ${matched.length} PS links`, 'ok');
+}
+
+// Send extracted PS links → Link Generator tab
+function sendToLinkGen() {
+  if (!lastExtracted.length) { toast('Run extract first', 'err'); return; }
+  document.getElementById('linkInput').value = lastExtracted.join('\n');
+  switchTab('links');
+  generateLinks();
+  toast(`\u2713 Sent ${lastExtracted.length} to Link Gen`, 'ok');
+}
+
+// ════════════════════════════════════════════════════════════════════
+//  PRESETS — save/load to localStorage + Export/Import + URL share
+// ════════════════════════════════════════════════════════════════════
+const PRESET_KEY = 'saturnity_presets_v1';
+
+function getPresets() {
+  try { return JSON.parse(localStorage.getItem(PRESET_KEY) || '{}'); }
+  catch { return {}; }
+}
+function setPresets(obj) {
+  localStorage.setItem(PRESET_KEY, JSON.stringify(obj));
+  refreshPresetUI();
+}
+
+function refreshPresetUI() {
+  const data = getPresets();
+  const names = Object.keys(data);
+  const sel = document.getElementById('presetSel');
+  sel.innerHTML = '<option value="">\u2014 pick a preset \u2014</option>';
+  names.forEach(n => {
+    const o = document.createElement('option');
+    o.value = n; o.textContent = n;
+    sel.appendChild(o);
+  });
+  const badge = document.getElementById('sb-presets');
+  badge.textContent = names.length + ' saved';
+  badge.className = 'step-badge' + (names.length ? ' ok' : '');
+}
+
+function savePreset() {
+  const name = document.getElementById('presetName').value.trim();
+  if (!name) { toast('Name your preset first', 'err'); return; }
+
+  // pull current state
+  const usnText = document.getElementById('usn-in').value;
+  const psText  = document.getElementById('ps-in').value;
+  if (!usnText.trim() && !psText.trim() && !lastExtracted.length) {
+    toast('Nothing to save \u2014 load some data first', 'err'); return;
+  }
+
+  const data = getPresets();
+  if (data[name] && !confirm(`Preset "${name}" exists. Overwrite?`)) return;
+
+  data[name] = {
+    raw_usn: usnText,
+    raw_ps:  psText,
+    extracted: lastExtracted.slice(),
+    saved: new Date().toISOString()
+  };
+  setPresets(data);
+  document.getElementById('presetName').value = '';
+  document.getElementById('presetSel').value = name;
+  toast(`\u2713 Saved "${name}"`, 'ok');
+}
+
+function askLoadPreset() {
+  const name = document.getElementById('presetSel').value;
+  if (!name) { toast('Pick a preset first', 'err'); return; }
+  const data = getPresets()[name];
+  if (!data) { toast('Preset not found', 'err'); return; }
+
+  // Decide what to load based on what's available
+  const hasRaw  = data.raw_usn || data.raw_ps;
+  const hasExt  = data.extracted && data.extracted.length;
+
+  let choice;
+  if (hasRaw && hasExt) {
+    choice = prompt(
+      `Preset "${name}" has both:\n  1 = Raw usernames + PS links (re-extract)\n  2 = Extracted PS links only (skip to Link Gen)\n  3 = Both\n\nEnter 1, 2, or 3:`,
+      '3'
+    );
+    if (!choice) return;
+    choice = choice.trim();
+  } else if (hasRaw) {
+    choice = '1';
+  } else if (hasExt) {
+    choice = '2';
+  } else {
+    toast('Preset is empty', 'err'); return;
+  }
+
+  if (choice === '1' || choice === '3') {
+    document.getElementById('usn-in').value = data.raw_usn || '';
+    document.getElementById('ps-in').value  = data.raw_ps  || '';
+    if (data.raw_usn) loadUsn();
+    if (data.raw_ps)  loadPS();
+  }
+  if (choice === '2' || choice === '3') {
+    if (hasExt) {
+      lastExtracted = data.extracted.slice();
+      document.getElementById('e-out').value = lastExtracted.join('\n');
+      document.getElementById('e-count').innerHTML =
+        `<b>${lastExtracted.length}</b> PS links \u00b7 from preset`;
+    }
+  }
+  toast(`\u2713 Loaded "${name}"`, 'ok');
+}
+
+function deletePreset() {
+  const name = document.getElementById('presetSel').value;
+  if (!name) { toast('Pick a preset first', 'err'); return; }
+  if (!confirm(`Delete preset "${name}"?`)) return;
+  const data = getPresets();
+  delete data[name];
+  setPresets(data);
+  toast(`Deleted "${name}"`, 'ok');
+}
+
+// ── EXPORT: opens modal with clipboard vs file choice ──
+let _exportPayload = null;
+let _exportName = null;
+function exportPreset() {
+  const name = document.getElementById('presetSel').value;
+  if (!name) { toast('Pick a preset to export', 'err'); return; }
+  const data = getPresets()[name];
+  if (!data) { toast('Preset not found', 'err'); return; }
+  _exportPayload = { name: name, ...data };
+  _exportName = name;
+  document.getElementById('exportPresetName').textContent = name;
+  document.getElementById('exportModal').classList.add('show');
+}
+function closeExport() {
+  document.getElementById('exportModal').classList.remove('show');
+  _exportPayload = null;
+}
+async function exportToClipboard() {
+  if (!_exportPayload) return;
+  const json = JSON.stringify(_exportPayload);
+  await copyText(json);
+  toast(`\u2713 "${_exportName}" copied to clipboard`, 'ok');
+  closeExport();
+}
+function exportToFile() {
+  if (!_exportPayload) return;
+  const json = JSON.stringify(_exportPayload, null, 2);
+  const blob = new Blob([json], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const safeName = _exportName.replace(/[^a-z0-9-_ ]/gi, '_');
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `saturnity-${safeName}.json`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+  toast(`\u2713 Downloaded "${a.download}"`, 'ok');
+  closeExport();
+}
+
+// ── IMPORT: opens modal with paste + upload choice ──
+function importPreset() {
+  document.getElementById('importTextarea').value = '';
+  document.getElementById('importFileInput').value = '';
+  document.getElementById('importModal').classList.add('show');
+}
+function closeImport() {
+  document.getElementById('importModal').classList.remove('show');
+}
+function confirmImport() {
+  const raw = document.getElementById('importTextarea').value.trim();
+  if (!raw) { toast('Paste JSON or upload a file first', 'err'); return; }
+  doImportJson(raw);
+}
+function doImportJson(raw) {
+  try {
+    const parsed = JSON.parse(raw.trim());
+    if (!parsed.name) throw new Error('Missing name field');
+    const data = getPresets();
+    let name = parsed.name;
+    if (data[name] && !confirm(`Preset "${name}" exists. Overwrite?`)) {
+      name = prompt('Rename it to:', name + ' (imported)');
+      if (!name) return;
+    }
+    data[name] = {
+      raw_usn:   parsed.raw_usn   || '',
+      raw_ps:    parsed.raw_ps    || '',
+      extracted: parsed.extracted || [],
+      saved:     parsed.saved     || new Date().toISOString()
+    };
+    setPresets(data);
+    document.getElementById('presetSel').value = name;
+    toast(`\u2713 Imported "${name}"`, 'ok');
+    closeImport();
+  } catch (err) {
+    toast('\u2717 Invalid JSON: ' + err.message, 'err');
+  }
+}
+// File-pick handler for import modal
+document.getElementById('importFileInput').addEventListener('change', async e => {
+  const f = e.target.files[0];
+  if (!f) return;
+  try {
+    const text = await f.text();
+    document.getElementById('importTextarea').value = text;
+    toast(`Loaded "${f.name}" \u2014 tap Import to apply`, 'ok');
+  } catch (err) {
+    toast('\u2717 Could not read file', 'err');
+  }
+});
+// Drag/drop for import file zone
+(function() {
+  const z = document.getElementById('importFileZone');
+  z.addEventListener('dragover', e => { e.preventDefault(); z.classList.add('over'); });
+  z.addEventListener('dragleave', () => z.classList.remove('over'));
+  z.addEventListener('drop', async e => {
+    e.preventDefault();
+    z.classList.remove('over');
+    const f = e.dataTransfer.files[0];
+    if (!f) return;
+    try {
+      const text = await f.text();
+      document.getElementById('importTextarea').value = text;
+      toast(`Loaded "${f.name}" \u2014 tap Import to apply`, 'ok');
+    } catch {}
+  });
+})();
+// Close modals on overlay tap
+document.getElementById('importModal').addEventListener('click', e => {
+  if (e.target.id === 'importModal') closeImport();
+});
+document.getElementById('exportModal').addEventListener('click', e => {
+  if (e.target.id === 'exportModal') closeExport();
+});
+
+// ── SHARE: encode preset into URL hash ──
+async function sharePreset() {
+  const name = document.getElementById('presetSel').value;
+  if (!name) { toast('Pick a preset to share', 'err'); return; }
+  const data = getPresets()[name];
+  if (!data) { toast('Preset not found', 'err'); return; }
+  const payload = { name: name, ...data };
+  const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(payload))));
+  const url = location.origin + location.pathname + '#preset=' + encoded;
+  if (url.length > 7500) {
+    toast('\u26a0 URL is very long (' + url.length + ' chars) \u2014 may break in some chat apps. Use Export instead.', 'err');
+  }
+  await copyText(url);
+  toast(`\u2713 Share link copied (${url.length} chars)`, 'ok');
+}
+
+// ── On page load: check URL hash for shared preset ──
+function checkHashForPreset() {
+  const m = location.hash.match(/preset=([^&]+)/);
+  if (!m) return;
+  try {
+    const json = decodeURIComponent(escape(atob(m[1])));
+    const parsed = JSON.parse(json);
+    if (!parsed.name) return;
+    if (!confirm(`Someone shared a preset with you:\n\n"${parsed.name}"\n\nLoad it now? (it will also be saved to your phone)`)) {
+      history.replaceState(null, '', location.pathname);
+      return;
+    }
+    const data = getPresets();
+    let name = parsed.name;
+    if (data[name]) {
+      name = parsed.name + ' (shared)';
+    }
+    data[name] = {
+      raw_usn:   parsed.raw_usn   || '',
+      raw_ps:    parsed.raw_ps    || '',
+      extracted: parsed.extracted || [],
+      saved:     parsed.saved     || new Date().toISOString()
+    };
+    setPresets(data);
+    document.getElementById('presetSel').value = name;
+    switchTab('extractor');
+    setTimeout(() => askLoadPreset(), 200);
+    history.replaceState(null, '', location.pathname);
+  } catch (err) {
+    toast('\u2717 Bad share link', 'err');
+  }
+}
+
+async function copyText(text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    try { await navigator.clipboard.writeText(text); return; } catch {}
+  }
+  const ta = document.createElement('textarea');
+  ta.value = text; document.body.appendChild(ta);
+  ta.select(); try { document.execCommand('copy'); } catch {}
+  ta.remove();
+}
+
+// ════════════════════════════════════════════════════════════════════
+//  TAB 3: LINK GENERATOR (chunked / paginated)
+// ════════════════════════════════════════════════════════════════════
+const CHUNK = 200;
+let allLinks = [];        // [{raw, url, visited}]
+let currentPage = 0;
+let activeIdx = -1;       // global index of currently focused box, -1 = none
+
 function generateLinks() {
   const input = document.getElementById('linkInput').value;
   const card = document.getElementById('linkOutCard');
-  const list = document.getElementById('linkList');
   const count = document.getElementById('linkCount');
-  list.innerHTML = '';
-  const lines = input.split('\n');
-  let n = 0;
 
-  lines.forEach(line => {
-    const trimmed = line.trim();
-    if (!trimmed) return;
-    n++;
-    let url = trimmed;
+  allLinks = input.split('\n').map(s => s.trim()).filter(Boolean).map(t => {
+    let url = t;
     if (!url.startsWith('http://') && !url.startsWith('https://')) url = 'https://' + url;
+    return { raw: t, url: url, visited: false };
+  });
 
+  if (!allLinks.length) {
+    card.style.display = 'none';
+    return;
+  }
+
+  card.style.display = 'block';
+  count.innerHTML = `<b>${allLinks.length}</b> link${allLinks.length === 1 ? '' : 's'}`;
+  currentPage = 0;
+  activeIdx = -1;
+  buildPager();
+  renderChunk();
+}
+
+function buildPager() {
+  const pager = document.getElementById('pager');
+  const total = allLinks.length;
+  if (total <= CHUNK) { pager.style.display = 'none'; pager.innerHTML = ''; return; }
+  pager.style.display = 'flex';
+  pager.innerHTML = '<span class="label">Page:</span>';
+  const pages = Math.ceil(total / CHUNK);
+  for (let i = 0; i < pages; i++) {
+    const from = i*CHUNK + 1;
+    const to   = Math.min((i+1)*CHUNK, total);
+    const b = document.createElement('button');
+    b.className = 'pager-btn' + (i === currentPage ? ' on' : '');
+    b.textContent = from + '\u2013' + to;
+    b.onclick = () => { currentPage = i; activeIdx = -1; renderChunk(); refreshPagerBtns(); };
+    pager.appendChild(b);
+  }
+}
+function refreshPagerBtns() {
+  const btns = document.querySelectorAll('.pager-btn');
+  btns.forEach((b, i) => b.classList.toggle('on', i === currentPage));
+}
+
+function renderChunk() {
+  const list = document.getElementById('linkList');
+  const start = currentPage * CHUNK;
+  const end   = Math.min(start + CHUNK, allLinks.length);
+
+  // counter offset so numbering continues across pages
+  list.style.setProperty('--start', start);
+  // CSS counter doesn't read CSS var directly — use a wrapper trick via JS:
+  list.innerHTML = '';
+  // We render numbers manually for cross-page continuity:
+  for (let i = start; i < end; i++) {
+    const item = allLinks[i];
     const li = document.createElement('li');
     li.className = 'link-item';
+    if (item.visited) li.classList.add('visited');
+    li.dataset.idx = i;
+
+    // number prefix (manual, not CSS counter, so pagination keeps numbering)
+    const num = document.createElement('span');
+    num.style.flexShrink = '0';
+    num.style.fontSize = '11px';
+    num.style.fontWeight = '700';
+    num.style.color = 'var(--muted)';
+    num.style.minWidth = '38px';
+    num.style.textAlign = 'right';
+    num.textContent = (i+1) + '.';
 
     const text = document.createElement('span');
     text.className = 'link-text';
     text.tabIndex = 0;
-    text.textContent = trimmed;
-    text.dataset.url = url;
+    text.textContent = item.raw;
 
     const btns = document.createElement('div');
     btns.className = 'row-btns';
@@ -708,90 +1210,119 @@ function generateLinks() {
 
     const openBtn = document.createElement('a');
     openBtn.className = 'mini open';
-    openBtn.href = url;
+    openBtn.href = item.url;
     openBtn.target = '_blank';
     openBtn.rel = 'noopener noreferrer';
     openBtn.textContent = 'open \u2197';
 
     btns.appendChild(copyBtn);
     btns.appendChild(openBtn);
+
+    // wipe the ::before pseudo by using our own number
+    li.style.setProperty('counter-reset', 'none');
+    li.appendChild(num);
     li.appendChild(text);
     li.appendChild(btns);
     list.appendChild(li);
 
-    copyBtn.addEventListener('click', (e) => { e.stopPropagation(); copyLink(url, copyBtn); highlightLink(li); });
-    text.addEventListener('click', () => { copyLink(url, copyBtn); highlightLink(li); });
-    openBtn.addEventListener('click', () => { li.classList.add('visited'); });
+    const idx = i;
+    copyBtn.addEventListener('click', (e) => { e.stopPropagation(); copyLinkAt(idx, copyBtn); });
+    text.addEventListener('click', (e) => {
+      // toggle: tapping the same active box deselects
+      if (activeIdx === idx) {
+        clearFocus();
+      } else {
+        copyLinkAt(idx, copyBtn);
+        focusBox(idx);
+      }
+    });
+    openBtn.addEventListener('click', () => {
+      allLinks[idx].visited = true;
+      li.classList.add('visited');
+    });
+  }
+
+  // hide CSS counter ::before by replacing with our manual number — done via inline span above
+  // (we also override .link-item::before width to 0 via this class)
+  list.classList.add('manual-num');
+  // restore focus state if active idx is on this page
+  if (activeIdx >= start && activeIdx < end) {
+    const li = list.querySelector(`li[data-idx="${activeIdx}"]`);
+    if (li) li.classList.add('active');
+    list.classList.add('focus-mode');
+  } else {
+    list.classList.remove('focus-mode');
+  }
+  document.getElementById('clearFocusBtn').style.display =
+    list.classList.contains('focus-mode') ? 'block' : 'none';
+}
+
+function copyLinkAt(idx, btn) {
+  const url = allLinks[idx].url;
+  copyText(url).then(() => {
+    if (btn) {
+      btn.textContent = '\u2713 copied';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'copy'; btn.classList.remove('copied'); }, 1200);
+    }
   });
-
-  if (n) {
-    card.style.display = 'block';
-    count.innerHTML = '<b>' + n + '</b> link' + (n === 1 ? '' : 's');
-  } else {
-    card.style.display = 'none';
-  }
 }
 
-function copyLink(url, btn) {
-  const restore = () => {
-    btn.textContent = '\u2713 copied';
-    btn.classList.add('copied');
-    setTimeout(() => { btn.textContent = 'copy'; btn.classList.remove('copied'); }, 1200);
-  };
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(url).then(restore).catch(() => fallbackCopy(url, restore));
-  } else {
-    fallbackCopy(url, restore);
-  }
+function focusBox(idx) {
+  activeIdx = idx;
+  const list = document.getElementById('linkList');
+  list.classList.add('focus-mode');
+  list.querySelectorAll('li.link-item').forEach(b => b.classList.remove('active'));
+  const li = list.querySelector(`li[data-idx="${idx}"]`);
+  if (li) li.classList.add('active');
+  document.getElementById('clearFocusBtn').style.display = 'block';
 }
 
-function fallbackCopy(url, done) {
-  const ta = document.createElement('textarea');
-  ta.value = url; document.body.appendChild(ta);
-  ta.select(); try { document.execCommand('copy'); } catch (e) {}
-  ta.remove(); done();
+function clearFocus() {
+  activeIdx = -1;
+  const list = document.getElementById('linkList');
+  list.classList.remove('focus-mode');
+  list.querySelectorAll('li.link-item').forEach(b => b.classList.remove('active'));
+  document.getElementById('clearFocusBtn').style.display = 'none';
+  // also clear any text selection
+  const sel = window.getSelection();
+  if (sel) sel.removeAllRanges();
 }
 
 function clearLinks() {
   document.getElementById('linkInput').value = '';
   document.getElementById('linkList').innerHTML = '';
+  document.getElementById('pager').innerHTML = '';
+  document.getElementById('pager').style.display = 'none';
   document.getElementById('linkOutCard').style.display = 'none';
+  allLinks = [];
+  activeIdx = -1;
 }
 
-// Ctrl+A selects ONLY the focused link box
+// Ctrl+A on a focused link selects only that box
 document.addEventListener('keydown', e => {
   const isSelectAll = (e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'a';
   if (!isSelectAll) return;
   const active = document.activeElement;
-  if (active && active.classList.contains('link-text')) {
+  if (active && active.classList && active.classList.contains('link-text')) {
     e.preventDefault();
     const range = document.createRange();
     range.selectNodeContents(active);
     const sel = window.getSelection();
     sel.removeAllRanges();
     sel.addRange(range);
-    highlightLink(active.closest('.link-item'));
+    const li = active.closest('.link-item');
+    if (li) focusBox(parseInt(li.dataset.idx));
   }
+  if (e.key === 'Escape') clearFocus();
 });
 
-function highlightLink(li) {
-  document.querySelectorAll('.link-item').forEach(b => { b.classList.add('dim'); b.classList.remove('active'); });
-  if (li) { li.classList.remove('dim'); li.classList.add('active'); }
-}
-
-document.addEventListener('click', e => {
-  if (!e.target.closest('.link-item') && !e.target.closest('#panel-links')) return;
-  if (!e.target.closest('.link-item')) {
-    document.querySelectorAll('.link-item').forEach(b => b.classList.remove('dim', 'active'));
-  }
-});
-
-// HELPERS
-function setUS(id, msg, cls) {
-  const el = document.getElementById(id);
-  el.textContent = msg;
-  el.className = 'upload-status' + (cls ? ' '+cls : '');
-}
+// ════════════════════════════════════════════════════════════════════
+//  INIT
+// ════════════════════════════════════════════════════════════════════
+refreshPresetUI();
+setFilterMode(filterModeOn);
+checkHashForPreset();
 
 </script>
 </body>
