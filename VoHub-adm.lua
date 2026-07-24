@@ -13,14 +13,9 @@ getgenv().VO_CONFIG = {
     PetFarmList = {}, -- Ordered pet names: age all non-FG of first name, then second, etc.; fallback if none available
     PrioritizePet = "2D Kitty",
 
-    -- === EVENT ===
-    PrioritizeCraft = "Tealwood Monster Bait",  -- "Rainbow Trout" | "Tealwood Monster Bait" | nil (auto). AutoFish always runs.
-    Craft = false,             -- If false, collect karps only — skip purchases (Tealwood bait / Rainbow Trout)
-    AutoSellFish = false,     -- Sell all karps each pass; disables tealwood/rainbow purchases
-    BuyIrishSetter = false,
-    AutoSkydive = false,      -- [RENDERS MAIN MAP] Complete Skydive Minigame
-    AutoStormSkydive = false, -- [DOESNT RENDER MAIN MAP] Complete storm challenge + buy all Storm Condors
-
+   -- === EVENT ===
+    AutoBeeGame = true,       -- Bees Wagon 2026: hand in bouquets, plant/buy seeds, claim pass
+    
     -- === PET PEN ===
     PetPen = true,
     CustomPenEggs = {"Egg Name"},
@@ -36,9 +31,9 @@ getgenv().VO_CONFIG = {
     ExcludeRarities = {},   -- Blacklist rarities (pets on ReleasePets by name bypass this)
 
     -- === AGE PETS ===
-    AgePets = false,
-    AgePetsNames = {},
-    AgePetsTypes = {"Normal"},  -- "Normal", "Neon", "ALL"
+    AgePets = true,
+    AgePetsNames = {"Violet Friend", "Sunflower Friend"},
+    AgePetsTypes = {"All"},  -- "Normal", "Neon", "ALL"
 
     -- === AUTO FUSE ===
     AutoFuse = true,
@@ -57,10 +52,44 @@ getgenv().VO_CONFIG = {
     BaitName = "Ice Soup Bait",
 
     -- === AUTO TRADE ===
-    AutoTrade = false,
-    ReceiverUsernames = {},
+    AutoTrade = true,
+    ReceiverUsernames = {
+            "Crystal0bKingN1381",
+            "OmegauzNebula61987",
+            "BuilderJbClawG1156",
+            "XzHollowjoTurbo4zX18",
+            "Ech0EjDelta660",
+            "XzZer063RiderezX1999",
+            "XzStarryvBOmegaxBSpa",
+            "XzRogueX95DriftXzX19",
+            "XzNightUROmegalzX199",
+            "XzFoxp1Pixel71Stormz",
+            "XzDawn3KWardenJzX",
+            "Xz_Turbo4hKingDhBaco",
+            "Xz_Ice3CWardenmCPris",
+            "Xz_Gamer2YEchozYSwit",
+            "Xz_Ban3SpShift3ropPl",
+            "XZ_Aqua85BeastN5Thun",
+            "PlayzMQCyberc50",
+            "OrbitrjSilvertjWrait",
+            "IceYTPixeliTNinja199",
+            "Hollow8qRiftX1993",
+            "EaglekBDarkABChase19",
+            "CyberYtFuryM13",
+            "CrimsonVdFrostbiter1",
+            "Cooki3moNightfallr19",
+            "AquawYStarz199229",
+            "HudsonCodesvibees",
+    },
     TradeItemList = {
-         pets = {"Dog","Neon Cat"}
+         pets = {
+            "Mega River Otter",
+            "Mega Sunflower Friend", 
+            "Mega Violet Friend", 
+            "Frostbite Bear", 
+            "Sushi Penguin",
+        },
+         toys = {"Paint Sealer"},
     }, -- Per category: { pets = {"Dog","Neon Cat"}, food = {}, toys = {}, ... } — use "ALL" in a category to allow that whole category (pets still gated by TradePetType for bare names)
     TradePetType = {"ALL"},       -- Only applies to pets: "ALL", "Mega", "Neon", "Regular", "Neon_FG", "Regular_FG" — not used for food/toys/etc.; inline prefixes on pet strings (e.g. "Mega Dog") bypass this
 
