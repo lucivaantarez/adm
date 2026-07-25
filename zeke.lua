@@ -1,4 +1,3 @@
-
    getgenv().Config = {
       Dashboard = {
             Enabled = true,       -- Send stats to dashboard
