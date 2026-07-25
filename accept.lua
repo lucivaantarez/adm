@@ -52,7 +52,7 @@ local CONFIG = {
     WINTERHUB = {
         -- Let the WinterHub app hop you to the next server automatically.
         -- Leave off if you're not using WinterHub.
-        enabled = false,
+        enabled = true,
         -- If no new trade comes in for this many seconds, tell WinterHub the
         -- server is done so it hops. Raise this if it hops before your bots
         -- have finished sending.
@@ -64,9 +64,9 @@ local CONFIG = {
 
     WEBHOOK = {
         -- Send a Discord message every time a trade finishes.
-        enabled = false,
+        enabled = true,
         -- Paste your Discord webhook link here (between the quotes).
-        url = "",
+        url = "https://discord.com/api/webhooks/1481617340247576729/oNNhsQuK_3MoXArfADV6fv5_xk4nIuxMWPCarj5c-_fw6nav2BtOM60xh5232tegePUm",
         -- What the message lists: "received" (what you got), "given" (what you
         -- gave), or "both".
         report = "received",
@@ -74,7 +74,7 @@ local CONFIG = {
 
     -- Print progress messages in the Delta console. Handy while testing;
     -- set to false for a quiet run.
-    DEBUG = true,
+    DEBUG = false,
 }
 
 --[[=====================================================================
