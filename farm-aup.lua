@@ -145,42 +145,17 @@ getgenv().Config = {
 };
 getgenv().scriptkey = "aGfykJWYHPhtTlWiRshigYzBfkNWjCZS"
 
--- Run the farm
-loadstring(game:HttpGet("https://zekehub.com/scripts/AdoptMe/MassFarm.lua"))()
-
--- Stale watchdog (Arceus-safe): detect by stud movement, KICK if stuck.
--- Re-exec doesn't reset a stuck Arceus VM (and can stack-overflow it);
--- only a disconnect kills the VM, so we kick and let rejoin bring a fresh one.
+-- Auto-restart wrapper: the farm errors out silently on some tabs (catchable,
+-- not a VM death). pcall catches the error and the loop re-runs the farm in the
+-- same VM. RESTART_WAIT prevents hammering / stack overflow between restarts.
 do
-    local STALE_LIMIT = 180  -- seconds of no movement before kicking (3 min)
-    local SAMPLE      = 15    -- seconds between position samples
-    local MOVE_MIN    = 8      -- studs; movement >= this in a sample = "running"
+    local RESTART_WAIT = 5
+    local SRC = "https://zekehub.com/scripts/AdoptMe/MassFarm.lua"
+    local exec = loadstring or load
 
-    local plr = game:GetService("Players").LocalPlayer
-
-    local function pos()
-        local c = plr.Character
-        local root = c and c:FindFirstChild("HumanoidRootPart")
-        return root and root.Position or nil
+    while true do
+        pcall(function() exec(game:HttpGet(SRC))() end)
+        -- reaches here only if the farm returned or errored -> restart
+        task.wait(RESTART_WAIT)
     end
-
-    task.spawn(function()
-        task.wait(SAMPLE)          -- let the game start loading before first sample
-        local last = pos()
-        local stillFor = 0
-        while true do
-            task.wait(SAMPLE)
-            local p = pos()
-            if p and last and (p - last).Magnitude >= MOVE_MIN then
-                stillFor = 0            -- moved -> running, reset
-            else
-                stillFor = stillFor + SAMPLE  -- no move / no character -> stale tick
-            end
-            last = p or last
-            if stillFor >= STALE_LIMIT then
-                plr:Kick("[watchdog] stale "..STALE_LIMIT.."s - rejoining")
-                break
-            end
-        end
-    end)
 end
