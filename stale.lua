@@ -4,7 +4,7 @@
 do
     local STALE_LIMIT = 300  -- seconds of no movement before kicking (3 min)
     local SAMPLE      = 30    -- seconds between position samples
-    local MOVE_MIN    = 8      -- studs; movement >= this in a sample = "moving"
+    local MOVE_MIN    = 5      -- studs; movement >= this in a sample = "moving"
 
     local plr = game:GetService("Players").LocalPlayer
 
