@@ -28,7 +28,7 @@ do
             end
             last = p or last
             if stillFor >= STALE_LIMIT then
-                plr:Kick("[watchdog] no movement "..STALE_LIMIT.."s - rejoining")
+                plr:Kick(" no movement "..STALE_LIMIT.."s - rejoining")
                 break
             end
         end
