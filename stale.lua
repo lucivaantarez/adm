@@ -2,7 +2,7 @@
 -- Watches the character; if it doesn't move for 3 minutes, kicks so the
 -- rejoin system brings the tab back fresh. Does not touch the farm script.
 do
-    local STALE_LIMIT = 300  -- seconds of no movement before kicking (3 min)
+    local STALE_LIMIT = 600  -- seconds of no movement before kicking (3 min)
     local SAMPLE      = 30    -- seconds between position samples
     local MOVE_MIN    = 5      -- studs; movement >= this in a sample = "moving"
 
