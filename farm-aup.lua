@@ -145,54 +145,42 @@ getgenv().Config = {
 };
 getgenv().scriptkey = "aGfykJWYHPhtTlWiRshigYzBfkNWjCZS"
 
--- Watchdog: re-executes if a tab is executed but not running (stale).
--- Running signal = character exists AND is moving (farm teleports between
--- areas; a stale tab sits still or has no character).
+-- Run the farm
+loadstring(game:HttpGet("https://zekehub.com/scripts/AdoptMe/MassFarm.lua"))()
+
+-- Stale watchdog (Arceus-safe): detect by stud movement, KICK if stuck.
+-- Re-exec doesn't reset a stuck Arceus VM (and can stack-overflow it);
+-- only a disconnect kills the VM, so we kick and let rejoin bring a fresh one.
 do
-    local GRACE        = 60    -- wait after each (re)exec before judging
-    local STALE_WINDOW = 120   -- seconds of no movement = stale
-    local MOVE_MIN     = 8      -- studs; below this over the window = "not moving"
-    local RECHECK      = 15     -- seconds between position samples
-    local MAX_RETRIES  = 6      -- stop after this many re-execs
-    local SRC = "https://zekehub.com/scripts/AdoptMe/MassFarm.lua"
+    local STALE_LIMIT = 180  -- seconds of no movement before kicking (3 min)
+    local SAMPLE      = 15    -- seconds between position samples
+    local MOVE_MIN    = 8      -- studs; movement >= this in a sample = "running"
 
     local plr = game:GetService("Players").LocalPlayer
 
-    local function exec()
-        pcall(function() loadstring(game:HttpGet(SRC))() end)
-    end
-
-    local function hrp()
+    local function pos()
         local c = plr.Character
-        return c and c:FindFirstChild("HumanoidRootPart")
+        local root = c and c:FindFirstChild("HumanoidRootPart")
+        return root and root.Position or nil
     end
-
-    exec()
 
     task.spawn(function()
-        local retries = 0
-        while retries < MAX_RETRIES do
-            task.wait(GRACE)
-
-            local start = hrp() and hrp().Position or nil
-            local moved, elapsed = 0, 0
-            while elapsed < STALE_WINDOW do
-                task.wait(RECHECK)
-                elapsed = elapsed + RECHECK
-                local p = hrp() and hrp().Position
-                if p and start then moved = math.max(moved, (p - start).Magnitude) end
-                if not start and p then start = p end
-                if moved >= MOVE_MIN then break end
-            end
-
-            if hrp() and moved >= MOVE_MIN then
-                retries = 0
+        task.wait(SAMPLE)          -- let the game start loading before first sample
+        local last = pos()
+        local stillFor = 0
+        while true do
+            task.wait(SAMPLE)
+            local p = pos()
+            if p and last and (p - last).Magnitude >= MOVE_MIN then
+                stillFor = 0            -- moved -> running, reset
             else
-                retries = retries + 1
-                warn("[WATCHDOG] stale (moved "..math.floor(moved).." studs, char="..tostring(hrp()~=nil).."), re-exec #"..retries)
-                exec()
+                stillFor = stillFor + SAMPLE  -- no move / no character -> stale tick
+            end
+            last = p or last
+            if stillFor >= STALE_LIMIT then
+                plr:Kick("[watchdog] stale "..STALE_LIMIT.."s - rejoining")
+                break
             end
         end
-        warn("[WATCHDOG] gave up after "..MAX_RETRIES.." retries")
     end)
 end
