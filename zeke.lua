@@ -144,4 +144,4 @@
         },
     };
 getgenv().scriptkey="aGfykJWYHPhtTlWiRshigYzBfkNWjCZS"
-loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/ab27f90f3715475da49f54f621048741.lua"))()
+loadstring(game:HttpGet("https://zekehub.com/scripts/AdoptMe/MassFarm.lua"))()
