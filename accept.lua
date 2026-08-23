@@ -66,7 +66,7 @@ local CONFIG = {
         -- Send a Discord message every time a trade finishes.
         enabled = true,
         -- Paste your Discord webhook link here (between the quotes).
-        url = "https://discord.com/api/webhooks/1481617340247576729/oNNhsQuK_3MoXArfADV6fv5_xk4nIuxMWPCarj5c-_fw6nav2BtOM60xh5232tegePUm",
+        url = "https://discord.com/api/webhooks/1530660135490424976/QD8OCfe9TN_bKGTKhKU5P8MFviQ1ZADTLF6U3y6Gdp1o4_QTSzslH7ViVuY22t5B5xXc",
         -- What the message lists: "received" (what you got), "given" (what you
         -- gave), or "both".
         report = "received",
