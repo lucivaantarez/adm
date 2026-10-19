@@ -1,52 +1,98 @@
 getgenv().VO_CONFIG = {
     -- === HUB / AUTH ===
     HubKey = "ztOZVe47zX7dsa7JJKpxWYLg7NThkueue96KcFuPn1s",
-    DeviceName = "Test",
+    DeviceName = "Main",
 
     -- === MAIN FARM (choose one mode) ===
     PotFarm = true,
     EggFarm = false,
-    PetFarm = false, -- Third mode: farm pets from PetFarmList in order (natural task-aging)
+    PetFarm = true, -- Third mode: farm pets from PetFarmList in order (natural task-aging)
+    EggBuy = true, -- If true (default): buy an egg when none in inventory. If false: no target eggs -> switch to PotFarm
     KeepEggFarm = false, -- If true, will keep trying to hatch eggs even when no bucks
-    KeepPetFarm = false, -- If true, will switch back when PetFarmList targets appear
+    KeepPetFarm = true, -- If true, will switch back when PetFarmList targets appear
     EggName = {"Egg Name"},  -- Priority order: first egg tried, then second, etc.
     PetFarmList = {}, -- Ordered pet names: age all non-FG of first name, then second, etc.; fallback if none available
     PrioritizePet = "2D Kitty",
 
-   -- === EVENT ===
-    AutoBeeGame = true,       -- Bees Wagon 2026: hand in bouquets, plant/buy seeds, claim pass
-    
+    -- === HALLOWEEN 2026 EVENT ===
+    AutoCandyCornPile = false,        -- Claim the Candy Corn Pile (requires the 1.25x Candy Multiplier gamepass)
+    GhostClustersMinigame = true,     -- Ghost Gallery minigame (on unless set to false; farm tasks pause while it runs; drops Crypt Keys)
+    HauntletMinigame = true,          -- Hauntlet 2 door-picking minigame (on unless set to false; farm tasks pause while it runs)
+    SpotlightMinigame = true,         -- Spotlight circus candy corn minigame (on unless set to false; farm tasks pause while it runs)
+
     -- === PET PEN ===
     PetPen = true,
-    CustomPenEggs = {"Egg Name"},
-    CustomPenPets = {"River Otter"},
-    PrioritizePetPenTypes = {"Neon"},  -- "Egg", "Normal", "Neon" (empty = all)
+    CustomPenEggs = {"Cracked Egg"},
+    CustomPenPets = {"Ant", "Mouse"},
+    PrioritizePetPenTypes = {"Egg", "Neon", "Normal"},  -- "Egg", "Normal", "Neon" (empty = all)
 
     -- === PET RELEASER ===
-    PetReleaser = false,
-    ReleasePets = {},       -- Whitelist: names to release (empty = all)
-    ExcludeReleasePets = {}, -- Blacklist: base names or prefixed like ReleasePets ("Neon Dog", "Normal Cat", "Mega FG X")
+    PetReleaser = true,
+    ReleasePets = {
+        "Mega Ant",
+        "Mega Mouse",
+        "Camel",
+        "Donkey",
+        "Poodle",
+        "Orangutan",
+        "Parakeet",
+        "Zebra",
+        "Corgi",
+        "Robot",
+        "Swordfish",     
+    },       -- Whitelist: names to release (empty = all)
+    ExcludeReleasePets = {
+        "Frostbite Bear",
+        "Dragonfruit Fox",
+        "Dango Penguins",
+        "Silverback Gorilla",
+        "Sushi Penguin",
+        "Velocirooster",
+        "2D Doggy",
+        "2D Kitty",
+        "Rainbow Trout",
+        "Tealwood Monster",
+        "Oakee Wizard",
+        "General Sheepdog",
+        "Chihuahua",
+        "Sunflower Friend",
+        "Violet Friend",
+        "Alicorn",
+        "Ancient Dragon",
+        "Blue Whale",
+        "Sea Turtle",
+        "Dragonfly",
+        "Kiwi Kiwi",
+        "Huntsman Robin",
+        "Three Blind Mice",
+        "Skelicorn",
+        "Stitches"
+    }, -- Blacklist: base names or prefixed like ReleasePets ("Neon Dog", "Normal Cat", "Mega FG X")
     ReleaseTypes = {},      -- "Mega", "Neon", "Normal" (empty = all)
     ReleaseRarities = {},   -- If ReleasePets non-empty: only used for pets NOT named in ReleasePets. If ReleasePets empty: filters all candidates.
-    ExcludeRarities = {},   -- Blacklist rarities (pets on ReleasePets by name bypass this)
+    ExcludeRarities = {"Legendary"},   -- Blacklist rarities (pets on ReleasePets by name bypass this)
 
     -- === AGE PETS ===
-    AgePets = true,
-    AgePetsNames = {"Violet Friend", "Sunflower Friend"},
-    AgePetsTypes = {"All"},  -- "Normal", "Neon", "ALL"
+    AgePets = false,
+    AgePetsNames = {},
+    AgePetsTypes = {"Normal"},  -- "Normal", "Neon", "ALL"
 
     -- === AUTO FUSE ===
     AutoFuse = true,
     AutoFuseBlacklist = {}, -- Pet names to never include in neon/mega fusion
 
     -- === BUY PETS ===
-    BuyPets = false,
-    BuyPetName = {"Pet Name", "Pet Name 2"},  -- Loops in order, buys all of first pet then moves to next
+    BuyPets = true,
+    BuyPetName = {"Skelicorn", "Crystal Egg", "Cracked Egg"},  -- Loops in order, buys all of first pet then moves to next
+
+    -- === STAR REWARDS SHOP ===
+    BuyStarRewards = true,
+    StarRewardBuyList = {"Gemstone Egg"},
 
     -- === BOXES ===
     BuyBoxes = false,
-    BoxName = "Box Name",   -- Name of the box to buy/open
-    OpenBoxes = false,
+    BoxName = {"Box Name"},   -- Boxes to buy when BuyBoxes is true
+    OpenBoxes = {"Box Name"}, -- Box names to open from inventory
 
     -- === LURE ===
     BaitName = "Ice Soup Bait",
@@ -54,44 +100,59 @@ getgenv().VO_CONFIG = {
     -- === AUTO TRADE ===
     AutoTrade = true,
     ReceiverUsernames = {
-            "Crystal0bKingN1381",
-            "OmegauzNebula61987",
-            "BuilderJbClawG1156",
-            "XzHollowjoTurbo4zX18",
-            "Ech0EjDelta660",
-            "XzZer063RiderezX1999",
-            "XzStarryvBOmegaxBSpa",
-            "XzRogueX95DriftXzX19",
-            "XzNightUROmegalzX199",
-            "XzFoxp1Pixel71Stormz",
-            "XzDawn3KWardenJzX",
-            "Xz_Turbo4hKingDhBaco",
-            "Xz_Ice3CWardenmCPris",
-            "Xz_Gamer2YEchozYSwit",
-            "Xz_Ban3SpShift3ropPl",
-            "XZ_Aqua85BeastN5Thun",
-            "PlayzMQCyberc50",
-            "OrbitrjSilvertjWrait",
-            "IceYTPixeliTNinja199",
-            "Hollow8qRiftX1993",
-            "EaglekBDarkABChase19",
-            "CyberYtFuryM13",
-            "CrimsonVdFrostbiter1",
-            "Cooki3moNightfallr19",
-            "AquawYStarz199229",
-            "HudsonCodesvibees",
+            "bcbcbbb7263663",
+            "bdxbxxhgdb67366",
+            "bsbshs62626262",
+            "bshs626w6hs",
+            "bsu22ue737ehsh",
+            "bsuw72u2nwu",
+            "dhhdhddhhh66yy",
+            "ebdbdhhshbs64663",
+            "hdhdbdh73637",
+            "hebss7366",
+            "hedhehsbsbbs63736",
+            "hehdh7373uhd",
+            "hs772h2eu7",
+            "hs62626hs7",
+            "hshbwbsbs7726",
+            "hshhshsbs627",
+            "hshshwbsbs6372",
+            "hshssvxvjwn876",
+            "hzhbs637",
+            "jsiwiiwuklo6262",
+            "jsjjssyou838373",
+            "jsjs772jw",
+            "jsjsh63hebbw82",
+            "jsn6bs73636he",
+            "kk737usjsj72",
+            "kk77037une",
+            "kkjjjj9876",
+            "ksskmsmsks737737",
+            "llijnjk98767",
+            "mdmsooyou77",
+            "mzjajjaahshsh6636363",
+            "mzkkss77u",
+            "nsnsjsnsjj66",
+            "ooeou337",
+            "sbhs77236",
+            "sjjsjj72727272",
+            "sjjsjwjj72727",
+            "sujssjjsss63636",
+            "wwhshjsj6736",
+            "ywhshwhsb87",
     },
     TradeItemList = {
          pets = {
-            "Mega River Otter",
-            "Mega Sunflower Friend", 
-            "Mega Violet Friend", 
-            "Frostbite Bear", 
-            "Sushi Penguin",
-        },
-         toys = {"Paint Sealer"},
-    }, -- Per category: { pets = {"Dog","Neon Cat"}, food = {}, toys = {}, ... } — use "ALL" in a category to allow that whole category (pets still gated by TradePetType for bare names)
-    TradePetType = {"ALL"},       -- Only applies to pets: "ALL", "Mega", "Neon", "Regular", "Neon_FG", "Regular_FG" — not used for food/toys/etc.; inline prefixes on pet strings (e.g. "Mega Dog") bypass this
+            "Skelicorn",
+            "Crystal Egg",
+            "Mummy Spider",
+            "Alicorn",
+            "Ancient Dragon",
+            "Dragonfly",
+            "Frostbite Bear",
+        }
+    }, -- Per category: { pets = {"Dog","Neon Cat"}, food = {}, toys = {}, ... } ? use "ALL" in a category to allow that whole category (pets still gated by TradePetType for bare names)
+    TradePetType = {"ALL"},       -- Only applies to pets: "ALL", "Mega", "Neon", "Regular", "Neon_FG", "Regular_FG" ? not used for food/toys/etc.; inline prefixes on pet strings (e.g. "Mega Dog") bypass this
 
     -- === CASH TRANSFER ===
     CashTransfer = false,
@@ -102,6 +163,32 @@ getgenv().VO_CONFIG = {
     WebhookEnabled = false,
     WebhookURL = "",
     WebhookPets = {},  -- Pet names to send (empty = all)
+
+    -- === ACCOUNT FEATURES (stop when Conditions met; FarmSync / FarmersV5 only) ===
+    AccountFeatures = {
+        Enabled = false,
+        RequireAll = true, -- true = AND all conditions; false = OR any one
+        Conditions = {
+            -- { Type = "PetCount", PetName = "Mega Neon Dog", MinCount = 16 },
+            -- { Type = "Currency", Currency = "money", MinAmount = 100000 },
+            -- { Type = "SessionMinutes", MinMinutes = 180 },
+        },
+        ["Selected Tool"] = "FarmSync", -- or "FarmersV5"
+        FarmSync = {
+            DisableAccount = false,
+            AutoChange = false,
+            StartFolderId = "",
+            EndFolderId = "",
+            ConfigId = "",
+        },
+        FarmersV5 = {
+            DisableAccount = false,
+            APIKey = "",
+            AutoSwap = false,
+            AutoSwapOption = 1,
+            AutoSwapCooldown = 100,
+        },
+    },
 
     ExtraOpti = true
 }
