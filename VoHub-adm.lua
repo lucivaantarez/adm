@@ -18,7 +18,7 @@ getgenv().VO_CONFIG = {
     AutoCandyCornPile = false,        -- Claim the Candy Corn Pile (requires the 1.25x Candy Multiplier gamepass)
     GhostClustersMinigame = false,     -- Ghost Gallery minigame (on unless set to false; farm tasks pause while it runs; drops Crypt Keys)
     HauntletMinigame = true,          -- Hauntlet 2 door-picking minigame (on unless set to false; farm tasks pause while it runs)
-    SpotlightMinigame = true,         -- Spotlight circus candy corn minigame (on unless set to false; farm tasks pause while it runs)
+    SpotlightMinigame = false,         -- Spotlight circus candy corn minigame (on unless set to false; farm tasks pause while it runs)
 
     -- === PET PEN ===
     PetPen = true,
