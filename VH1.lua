@@ -66,7 +66,7 @@ getgenv().VO_CONFIG = {
         "Huntsman Robin",
         "Three Blind Mice",
         "Skelicorn",
-        "Stitches"
+        "Stitches",
     }, -- Blacklist: base names or prefixed like ReleasePets ("Neon Dog", "Normal Cat", "Mega FG X")
     ReleaseTypes = {},      -- "Mega", "Neon", "Normal" (empty = all)
     ReleaseRarities = {},   -- If ReleasePets non-empty: only used for pets NOT named in ReleasePets. If ReleasePets empty: filters all candidates.
@@ -147,7 +147,7 @@ getgenv().VO_CONFIG = {
             "Ancient Dragon",
             "Dragonfly",
             "Frostbite Bear",
-            "Stitches"
+            "Stitches",
             "Admin Abuse Egg",
         }
     }, -- Per category: { pets = {"Dog","Neon Cat"}, food = {}, toys = {}, ... } ? use "ALL" in a category to allow that whole category (pets still gated by TradePetType for bare names)
