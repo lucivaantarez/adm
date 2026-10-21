@@ -66,7 +66,7 @@ getgenv().VO_CONFIG = {
         "Huntsman Robin",
         "Three Blind Mice",
         "Skelicorn",
-        "Stitches"
+        "Stitches",
     }, -- Blacklist: base names or prefixed like ReleasePets ("Neon Dog", "Normal Cat", "Mega FG X")
     ReleaseTypes = {},      -- "Mega", "Neon", "Normal" (empty = all)
     ReleaseRarities = {},   -- If ReleasePets non-empty: only used for pets NOT named in ReleasePets. If ReleasePets empty: filters all candidates.
@@ -83,7 +83,7 @@ getgenv().VO_CONFIG = {
 
     -- === BUY PETS ===
     BuyPets = true,
-    BuyPetName = {"Skelicorn", "Crystal Egg", "Cracked Egg"},  -- Loops in order, buys all of first pet then moves to next
+    BuyPetName = {"Boohoo", "Crystal Egg", "Cracked Egg"},  -- Loops in order, buys all of first pet then moves to next
 
     -- === STAR REWARDS SHOP ===
     BuyStarRewards = true,
@@ -149,6 +149,7 @@ getgenv().VO_CONFIG = {
             "Frostbite Bear",
             "Stitches",
             "Admin Abuse Egg",
+            "Boohoo",
         }
     }, -- Per category: { pets = {"Dog","Neon Cat"}, food = {}, toys = {}, ... } ? use "ALL" in a category to allow that whole category (pets still gated by TradePetType for bare names)
     TradePetType = {"ALL"},       -- Only applies to pets: "ALL", "Mega", "Neon", "Regular", "Neon_FG", "Regular_FG" ? not used for food/toys/etc.; inline prefixes on pet strings (e.g. "Mega Dog") bypass this
