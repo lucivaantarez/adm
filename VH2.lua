@@ -73,9 +73,9 @@ getgenv().VO_CONFIG = {
     ExcludeRarities = {"Legendary"},   -- Blacklist rarities (pets on ReleasePets by name bypass this)
 
     -- === AGE PETS ===
-    AgePets = false,
-    AgePetsNames = {},
-    AgePetsTypes = {"Normal"},  -- "Normal", "Neon", "ALL"
+    AgePets = true,
+    AgePetsNames = {"Ant", "Mouse"},
+    AgePetsTypes = {"Neon"},  -- "Normal", "Neon", "ALL"
 
     -- === AUTO FUSE ===
     AutoFuse = true,
