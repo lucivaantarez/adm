@@ -40,6 +40,7 @@ getgenv().VO_CONFIG = {
         "Corgi",
         "Robot",
         "Swordfish",     
+        "Mummy Spider",
     },       -- Whitelist: names to release (empty = all)
     ExcludeReleasePets = {
         "Frostbite Bear",
