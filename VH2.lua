@@ -84,7 +84,7 @@ getgenv().VO_CONFIG = {
 
     -- === BUY PETS ===
     BuyPets = true,
-    BuyPetName = {"Stitches", "Crystal Egg", "Cracked Egg"},  -- Loops in order, buys all of first pet then moves to next
+    BuyPetName = {"Crystal Egg", "Cracked Egg"},  -- Loops in order, buys all of first pet then moves to next
 
     -- === STAR REWARDS SHOP ===
     BuyStarRewards = true,
