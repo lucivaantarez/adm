@@ -24,13 +24,13 @@ getgenv().VO_CONFIG = {
     PetPen = true,
     CustomPenEggs = {"Cracked Egg"},
     CustomPenPets = {"Ant", "Mouse"},
-    PrioritizePetPenTypes = {"Egg", "Neon", "Normal"},  -- "Egg", "Normal", "Neon" (empty = all)
+    PrioritizePetPenTypes = {"Egg", "Normal", "Neon"},  -- "Egg", "Normal", "Neon" (empty = all)
 
     -- === PET RELEASER ===
     PetReleaser = true,
     ReleasePets = {
-        "Mega Ant",
-        "Mega Mouse",
+        "Neon Ant",
+        "Neon Mouse",
         "Camel",
         "Donkey",
         "Poodle",
@@ -43,30 +43,7 @@ getgenv().VO_CONFIG = {
         "Mummy Spider",
     },       -- Whitelist: names to release (empty = all)
     ExcludeReleasePets = {
-        "Frostbite Bear",
-        "Dragonfruit Fox",
-        "Dango Penguins",
-        "Silverback Gorilla",
-        "Sushi Penguin",
-        "Velocirooster",
-        "2D Doggy",
-        "2D Kitty",
-        "Rainbow Trout",
-        "Tealwood Monster",
-        "Oakee Wizard",
-        "General Sheepdog",
         "Chihuahua",
-        "Sunflower Friend",
-        "Violet Friend",
-        "Alicorn",
-        "Ancient Dragon",
-        "Blue Whale",
-        "Sea Turtle",
-        "Dragonfly",
-        "Kiwi Kiwi",
-        "Huntsman Robin",
-        "Three Blind Mice",
-        "Skelicorn",
         "Stitches",
     }, -- Blacklist: base names or prefixed like ReleasePets ("Neon Dog", "Normal Cat", "Mega FG X")
     ReleaseTypes = {},      -- "Mega", "Neon", "Normal" (empty = all)
@@ -101,7 +78,7 @@ getgenv().VO_CONFIG = {
     -- === AUTO TRADE ===
     AutoTrade = true,
         ReceiverUsernames = {
-            "WBNicole_Beier",
+            "WBWillardWright",
             "WBJewelOndricka",
             "WBShaneKuhic245",
             "WBModesta_Will",
@@ -110,14 +87,14 @@ getgenv().VO_CONFIG = {
             "WBModestoDaniel",
             "WBMarlonYost703",
             "WBFavian_Gutmann",
-            "WBBonnieBell16",
+            "WBNicole_Beier",
             "WBSusieKeeling148",
-            "WBSusie_Strosin772",
             "WBCorey_Renner587",
             "WBFaustoMante932",
             "WBKristofferOrtiz",
             "WBWendy_Lee",
-            "WBWillardWright",
+            "WBSethMacejkovic105",
+            "WBOlenKerluke755",
             "WBDorthyHughes",
             "WBSethStiedemann",
             "WBBriceBell812",
