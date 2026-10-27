@@ -12,7 +12,8 @@ getgenv().VO_CONFIG = {
     KeepPetFarm = true, -- If true, will switch back when PetFarmList targets appear
     EggName = {"Egg Name"},  -- Priority order: first egg tried, then second, etc.
     PetFarmList = {}, -- Ordered pet names: age all non-FG of first name, then second, etc.; fallback if none available
-    PrioritizePet = "2D Kitty",
+    Farm2DEvent = false,
+    PrioritizePet = "",
 
     -- === HALLOWEEN 2026 EVENT ===
     AutoCandyCornPile = false,        -- Claim the Candy Corn Pile (requires the 1.25x Candy Multiplier gamepass)
