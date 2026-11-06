@@ -79,25 +79,25 @@ getgenv().VO_CONFIG = {
     -- === AUTO TRADE ===
     AutoTrade = true,
 ReceiverUsernames = {
-"shelia_6sa6"
-"renee_1zw"
-"thomas_j8lg"
-"yolanda_cgp"
-"sean_zuhhg"
-"rick_t9h"
-"courtney_90g58b"
-"kathleen_pv84"
-"crystal_w7sidk"
-"robin_tay98z"
-"colleen_3f6"
-"vanessa_b1q"
-"michael_70l"
-"jessica_w68ekq"
-"george_9nkcx"
-"steven_y78p"
-"phillip_a5b"
-"monica_vza2"
-"krystal_dn4"
+"shelia_6sa6",
+"renee_1zw",
+"thomas_j8lg",
+"yolanda_cgp",
+"sean_zuhhg",
+"rick_t9h",
+"courtney_90g58b",
+"kathleen_pv84",
+"crystal_w7sidk",
+"robin_tay98z",
+"colleen_3f6",
+"vanessa_b1q",
+"michael_70l",
+"jessica_w68ekq",
+"george_9nkcx",
+"steven_y78p",
+"phillip_a5b",
+"monica_vza2",
+"krystal_dn4",
 "jeffrey_6vr99",
     },
     TradeItemList = {
