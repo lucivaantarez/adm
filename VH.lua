@@ -79,26 +79,26 @@ getgenv().VO_CONFIG = {
     -- === AUTO TRADE ===
     AutoTrade = true,
 ReceiverUsernames = {
-"swidzobb4461",
-"stoidubf1519",
-"suth51dgeq49",
-"swjebyhi1429",
-"swwnnpkx1432",
-"swwx00syfr22",
-"stxpiarq9362",
-"svta67yltr96",
-"sxcuivpw9851",
-"sujdkhun1942",
-"stny64lylq12",
-"swwh06ifvh25",
-"subw59vfft37",
-"suzf72qsaf91",
-"sqlw64fblq86",
-"swqx95vssg20",
-"sqlu93nygn59",
-"sqltufro0724",
-"swqpeuzb1520",
-"svskyauc2547",
+"shelia_6sa6"
+"renee_1zw"
+"thomas_j8lg"
+"yolanda_cgp"
+"sean_zuhhg"
+"rick_t9h"
+"courtney_90g58b"
+"kathleen_pv84"
+"crystal_w7sidk"
+"robin_tay98z"
+"colleen_3f6"
+"vanessa_b1q"
+"michael_70l"
+"jessica_w68ekq"
+"george_9nkcx"
+"steven_y78p"
+"phillip_a5b"
+"monica_vza2"
+"krystal_dn4"
+"jeffrey_6vr99"
     },
     TradeItemList = {
          pets = {
