@@ -15,12 +15,6 @@ getgenv().VO_CONFIG = {
     Farm2DEvent = false,
     PrioritizePet = "",
 
-    -- === HALLOWEEN 2026 EVENT ===
-    AutoCandyCornPile = false,        -- Claim the Candy Corn Pile (requires the 1.25x Candy Multiplier gamepass)
-    GhostClustersMinigame = true,     -- Ghost Gallery minigame (on unless set to false; farm tasks pause while it runs; drops Crypt Keys)
-    HauntletMinigame = true,          -- Hauntlet 2 door-picking minigame (on unless set to false; farm tasks pause while it runs)
-    SpotlightMinigame = true,         -- Spotlight circus candy corn minigame (on unless set to false; farm tasks pause while it runs)
-
     -- === PET PEN ===
     PetPen = true,
     CustomPenEggs = {"Cracked Egg"},
@@ -62,7 +56,7 @@ getgenv().VO_CONFIG = {
 
     -- === BUY PETS ===
     BuyPets = true,
-    BuyPetName = {"Stray Cat Dragon", "Crystal Egg", "Cracked Egg"},  -- Loops in order, buys all of first pet then moves to next
+    BuyPetName = {"Crystal Egg", "Cracked Egg"},  -- Loops in order, buys all of first pet then moves to next
 
     -- === STAR REWARDS SHOP ===
     BuyStarRewards = false,
@@ -74,7 +68,8 @@ getgenv().VO_CONFIG = {
     OpenBoxes = {"Box Name"}, -- Box names to open from inventory
 
     -- === LURE ===
-    BaitName = "Ice Soup Bait",
+    BaitName = "Cyclone Sponge Bait,
+    LightningFarm = true,
 
     -- === AUTO TRADE ===
     AutoTrade = true,
@@ -113,6 +108,9 @@ ReceiverUsernames = {
             "Admin Abuse Egg",
             "Stray Cat Dragon",
             "Pandaguin Glooptodog",
+            "Electric Hornet",
+            "Thunderfisher",
+            "Haetyphoon",
         }
     }, -- Per category: { pets = {"Dog","Neon Cat"}, food = {}, toys = {}, ... } ? use "ALL" in a category to allow that whole category (pets still gated by TradePetType for bare names)
     TradePetType = {"ALL"},       -- Only applies to pets: "ALL", "Mega", "Neon", "Regular", "Neon_FG", "Regular_FG" ? not used for food/toys/etc.; inline prefixes on pet strings (e.g. "Mega Dog") bypass this
