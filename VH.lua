@@ -98,7 +98,7 @@ ReceiverUsernames = {
 "phillip_a5b"
 "monica_vza2"
 "krystal_dn4"
-"jeffrey_6vr99"
+"jeffrey_6vr99",
     },
     TradeItemList = {
          pets = {
